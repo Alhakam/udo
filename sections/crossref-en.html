@@ -1,0 +1,190 @@
+<html><h2 id="crossreference" class="list">Cross reference for Uncertain Damage Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Uncertain Damage Ontology.
+<div id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#UnclassifiedDamage"
+            title="https://wisib.de/ontologie/damage/udo#UnclassifiedDamage">Unclassified Damage</a>
+      </li>
+      <li>
+         <a href="#UnclassifiedStructuralDamage"
+            title="https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage">Unclassified Structural Damage</a>
+      </li>
+      <li>
+         <a href="#UndetectedDamage"
+            title="https://wisib.de/ontologie/damage/udo#UndetectedDamage">Undetected Damage</a>
+      </li>
+      <li>
+         <a href="#UnidentifiedDamage"
+            title="https://wisib.de/ontologie/damage/udo#UnidentifiedDamage">Unidentified Damage</a>
+      </li>
+   </ul>
+   <div class="entity" id="UnclassifiedDamage">
+      <h3>Unclassified Damage<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#UnclassifiedDamage</p>
+      <div class="comment">
+         <span class="markdown">A Damage that is not further classified with domain-specific classes</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="https://www.w3id.org/dot#Damage">damage</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#UnclassifiedStructuralDamage"
+               title="https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage">Unclassified Structural Damage</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="UnclassifiedStructuralDamage">
+      <h3>Unclassified Structural Damage<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage</p>
+      <div class="comment">
+         <span class="markdown">A Damage that has not been classified regarding its structural capability</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>(<span class="logic">not</span> (<span class="dotted" title="https://www.w3id.org/dot#Defect">defect</span>
+            <sup class="type-c" title="class">c</sup>)) <span class="logic">and</span> (<span class="logic">not</span> (<span class="dotted" title="https://www.w3id.org/dot#StructuralDamage">structural damage</span>
+            <sup class="type-c" title="class">c</sup>))</dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#UnclassifiedDamage"
+               title="https://wisib.de/ontologie/damage/udo#UnclassifiedDamage">Unclassified Damage</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="UndetectedDamage">
+      <h3>Undetected Damage<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#UndetectedDamage</p>
+      <div class="comment">
+         <span class="markdown">A Damage that has not been asserted or detected through inspections and therefore can only be reasoned by other facts.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="https://www.w3id.org/dot#Damage">damage</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#damageProbability"
+               title="https://wisib.de/ontologie/damage/udo#damageProbability">damage probability</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasUndetectedDamage"
+               title="https://wisib.de/ontologie/damage/udo#hasUndetectedDamage">has undetected damage</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="UnidentifiedDamage">
+      <h3>Unidentified Damage<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#UnidentifiedDamage</p>
+      <div class="comment">
+         <span class="markdown">A Damage which has multiple asserted domain-specific classes, so that an unambigious classification of the respective Damage instance is not possible.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="https://www.w3id.org/dot#Damage">damage</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hasUndetectedDamage"
+            title="https://wisib.de/ontologie/damage/udo#hasUndetectedDamage">has undetected damage</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasUndetectedDamage">
+      <h3>has undetected damage<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#hasUndetectedDamage</p>
+      <div class="comment">
+         <span class="markdown">The relationship between a potentially damaged component and an undetected damage.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="https://www.w3id.org/dot#hasDamage">has damage</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#UndetectedDamage"
+                  title="https://wisib.de/ontologie/damage/udo#UndetectedDamage">Undetected Damage</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#damageProbability"
+            title="https://wisib.de/ontologie/damage/udo#damageProbability">damage probability</a>
+      </li>
+   </ul>
+   <div class="entity" id="damageProbability">
+      <h3>damage probability<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#damageProbability</p>
+      <div class="comment">
+         <span class="markdown">The probability that an Undetected Damage will exist.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#UndetectedDamage"
+                  title="https://wisib.de/ontologie/damage/udo#UndetectedDamage">Undetected Damage</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</html>

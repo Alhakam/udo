@@ -1,0 +1,84 @@
+@prefix dot: <https://www.w3id.org/dot#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix udo: <https://wisib.de/ontologie/damage/udo#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://wisib.de/ontologie/damage/udo> .
+
+<https://wisib.de/ontologie/damage/udo> rdf:type owl:Ontology ;
+                                         owl:versionIRI <https://wisib.de/ontologie/damage/udo/0.1> ;
+dcterms:creator [ rdf:type foaf:Person ;
+                foaf:name "Al-Hakam Hamdan";
+                ] ;
+dcterms:description "Ontology that defines classes for uncertainties in damage assessment"@en ;
+dcterms:license "https://creativecommons.org/licenses/by/1.0" ;
+dcterms:title "Uncertain Damage Ontology"@en ;
+vann:preferredNamespacePrefix "udo" ;
+vann:preferredNamespaceUri "https://wisib.de/ontologie/damage/udo#" .
+
+#################################################################
+#    Object properties
+#################################################################
+
+###  https://wisib.de/ontologie/damage/udo#hasUndetectedDamage
+udo:hasUndetectedDamage rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf dot:hasDamage ;
+                        rdfs:range udo:UndetectedDamage ;
+                        rdfs:comment "The relationship between a potentially damaged component and an undetected damage."@en ;
+                        rdfs:label "has undetected damage"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://wisib.de/ontologie/damage/udo#damageProbability
+udo:damageProbability rdf:type owl:DatatypeProperty ;
+                      rdfs:domain udo:UndetectedDamage ;
+                      rdfs:comment "The probability that an Undetected Damage will exist."@en ;
+                      rdfs:label "damage probability"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://wisib.de/ontologie/damage/udo#UnclassifiedDamage
+udo:UnclassifiedDamage rdf:type owl:Class ;
+                       rdfs:subClassOf dot:Damage ;
+                       rdfs:comment "A Damage that is not further classified with domain-specific classes"@en ;
+                       rdfs:label "Unclassified Damage"@en .
+
+
+###  https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage
+udo:UnclassifiedStructuralDamage rdf:type owl:Class ;
+                                 owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                              owl:complementOf dot:Defect
+                                                                            ]
+                                                                            [ rdf:type owl:Class ;
+                                                                              owl:complementOf dot:StructuralDamage
+                                                                            ]
+                                                                          ) ;
+                                                       rdf:type owl:Class
+                                                     ] ;
+                                 rdfs:subClassOf udo:UnclassifiedDamage ;
+                                 rdfs:comment "A Damage that has not been classified regarding its structural capability"@en ;
+                                 rdfs:label "Unclassified Structural Damage"@en .
+
+
+###  https://wisib.de/ontologie/damage/udo#UndetectedDamage
+udo:UndetectedDamage rdf:type owl:Class ;
+                     rdfs:subClassOf dot:Damage ;
+                     rdfs:comment "A Damage that has not been asserted or detected through inspections and therefore can only be reasoned by other facts."@en ;
+                     rdfs:label "Undetected Damage"@en .
+
+
+###  https://wisib.de/ontologie/damage/udo#UnidentifiedDamage
+udo:UnidentifiedDamage rdf:type owl:Class ;
+                       rdfs:subClassOf dot:Damage ;
+                       rdfs:comment "A Damage which has multiple asserted domain-specific classes, so that an unambigious classification of the respective Damage instance is not possible."@en ;
+                       rdfs:label "Unidentified Damage"@en .
