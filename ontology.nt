@@ -1,14 +1,14 @@
-<https://wisib.de/ontologie/damage/udo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://wisib.de/ontologie/damage/udo> <http://www.w3.org/2002/07/owl#versionIRI> <https://wisib.de/ontologie/damage/udo/0.1> .
-<https://wisib.de/ontologie/damage/udo> <http://purl.org/dc/terms/creator> _:genid1 .
+<hhttps://w3id.org/udo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<hhttps://w3id.org/udo> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/udo/0.2> .
+<hhttps://w3id.org/udo> <http://purl.org/dc/terms/creator> _:genid1 .
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Al-Hakam Hamdan" .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
 <http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid1 <http://xmlns.com/foaf/0.1/name> "Al-Hakam Hamdan" .
-<https://wisib.de/ontologie/damage/udo> <http://purl.org/dc/terms/description> "Ontology that defines classes for uncertainties in damage assessment"@en .
-<https://wisib.de/ontologie/damage/udo> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/1.0" .
-<https://wisib.de/ontologie/damage/udo> <http://purl.org/dc/terms/title> "Uncertain Damage Ontology"@en .
-<https://wisib.de/ontologie/damage/udo> <http://purl.org/vocab/vann/preferredNamespacePrefix> "udo" .
-<https://wisib.de/ontologie/damage/udo> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://wisib.de/ontologie/damage/udo#" .
+<hhttps://w3id.org/udo> <http://purl.org/dc/terms/description> "Ontology that defines classes for uncertainties in damage assessment"@en .
+<hhttps://w3id.org/udo> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/1.0" .
+<hhttps://w3id.org/udo> <http://purl.org/dc/terms/title> "Uncertain Damage Ontology"@en .
+<hhttps://w3id.org/udo> <http://purl.org/vocab/vann/preferredNamespacePrefix> "udo" .
+<hhttps://w3id.org/udo> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/udo#" .
 # 
 # 
 # #################################################################
@@ -17,6 +17,24 @@ _:genid1 <http://xmlns.com/foaf/0.1/name> "Al-Hakam Hamdan" .
 # #
 # #################################################################
 # 
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://xmlns.com/foaf/0.1/name
 <http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -30,13 +48,43 @@ _:genid1 <http://xmlns.com/foaf/0.1/name> "Al-Hakam Hamdan" .
 # #################################################################
 # 
 # 
-# https://wisib.de/ontologie/damage/udo#hasUndetectedDamage
-<https://wisib.de/ontologie/damage/udo#hasUndetectedDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://wisib.de/ontologie/damage/udo#hasUndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3id.org/dot#hasDamage> .
+# https://w3id.org/udo#hasContradictions
+<https://w3id.org/udo#hasContradictions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/udo#hasContradictions> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#AmbigiousDamage> .
+<https://w3id.org/udo#hasContradictions> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/udo#ContradictingDamageClassList> .
+<https://w3id.org/udo#hasContradictions> <http://www.w3.org/2000/01/rdf-schema#comment> "References a list of contradicting damage classes that could possibly be determined for an ambigious damage (represented by an instance of udo:AmbigiousDamage)."@en .
+<https://w3id.org/udo#hasContradictions> <http://www.w3.org/2000/01/rdf-schema#label> "has contradictions"@en .
+# 
+# https://w3id.org/udo#hasUncertainValue
+<https://w3id.org/udo#hasUncertainValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/udo#hasUncertainValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#UndetectedDamage> .
+<https://w3id.org/udo#hasUncertainValue> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/udo#UncertainValue> .
+<https://w3id.org/udo#hasUncertainValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Assigns a fuzzy value that characterizes an undetected damage (represented through an instance of udo:UndetectedDamage)."@en .
+<https://w3id.org/udo#hasUncertainValue> <http://www.w3.org/2000/01/rdf-schema#label> "has uncertain value"@en .
+# 
+# https://w3id.org/udo#hasUndetectedDamage
+<https://w3id.org/udo#hasUndetectedDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/udo#hasUndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.w3id.org/dot#hasDamage> .
 <https://www.w3id.org/dot#hasDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://wisib.de/ontologie/damage/udo#hasUndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#range> <https://wisib.de/ontologie/damage/udo#UndetectedDamage> .
-<https://wisib.de/ontologie/damage/udo#hasUndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#comment> "The relationship between a potentially damaged component and an undetected damage."@en .
-<https://wisib.de/ontologie/damage/udo#hasUndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#label> "has undetected damage"@en .
+<https://w3id.org/udo#hasUndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/udo#UndetectedDamage> .
+<https://w3id.org/udo#hasUndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#comment> "The relationship between a potentially damaged component and an undetected damage."@en .
+<https://w3id.org/udo#hasUndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#label> "has undetected damage"@en .
+# 
+# https://w3id.org/udo#referencedDataProperty
+<https://w3id.org/udo#referencedDataProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/udo#referencedDataProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#UncertainValue> .
+<https://w3id.org/udo#referencedDataProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/2002/07/owl#DatatypeProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/udo#referencedDataProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "References a specific owl:DataTypeProperty that is used for an uncertain value (represented by an instance of udo:UncertainValue)."@en .
+<https://w3id.org/udo#referencedDataProperty> <http://www.w3.org/2000/01/rdf-schema#label> "referenced DataProperty"@en .
+# 
+# https://w3id.org/udo#referencesClass
+<https://w3id.org/udo#referencesClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/udo#referencesClass> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#ContradictingDamageClassList> .
+<https://w3id.org/udo#referencesClass> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2002/07/owl#Class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/udo#referencesClass> <http://www.w3.org/2000/01/rdf-schema#comment> "References an owl:Class that is part of a list of contradicting damage classes for an ambigious damage. The instance of owl:Class should be a subclass of dot:Damage."@en .
+<https://w3id.org/udo#referencesClass> <http://www.w3.org/2000/01/rdf-schema#label> "references class"@en .
 # 
 # https://www.w3id.org/dot#hasDamage
 # 
@@ -49,11 +97,53 @@ _:genid1 <http://xmlns.com/foaf/0.1/name> "Al-Hakam Hamdan" .
 # #################################################################
 # 
 # 
-# https://wisib.de/ontologie/damage/udo#damageProbability
-<https://wisib.de/ontologie/damage/udo#damageProbability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://wisib.de/ontologie/damage/udo#damageProbability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://wisib.de/ontologie/damage/udo#UndetectedDamage> .
-<https://wisib.de/ontologie/damage/udo#damageProbability> <http://www.w3.org/2000/01/rdf-schema#comment> "The probability that an Undetected Damage will exist."@en .
-<https://wisib.de/ontologie/damage/udo#damageProbability> <http://www.w3.org/2000/01/rdf-schema#label> "damage probability"@en .
+# https://w3id.org/udo#damagePossibility
+<https://w3id.org/udo#damagePossibility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/udo#damagePossibility> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#UndetectedDamage> .
+<https://w3id.org/udo#damagePossibility> <http://www.w3.org/2000/01/rdf-schema#comment> "The possibility that an Undetected Damage can exist."@en .
+<https://w3id.org/udo#damagePossibility> <http://www.w3.org/2000/01/rdf-schema#label> "damage possibility"@en .
+# 
+# https://w3id.org/udo#damagePossibilityFactor
+<https://w3id.org/udo#damagePossibilityFactor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/udo#damagePossibilityFactor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#UndetectedDamage> .
+<https://w3id.org/udo#damagePossibilityFactor> <http://www.w3.org/2000/01/rdf-schema#comment> "An auxiliary parameter that defines a partial possibility of occurence for a damage, usually inferred by a single damage assessment rule. The sum of all possibility factors of an instance of udo:UndetectedDamage can be used in conjunction with an appropriate membership function to determine the overall possibility."@en .
+<https://w3id.org/udo#damagePossibilityFactor> <http://www.w3.org/2000/01/rdf-schema#label> "damage possibility factor"@en .
+# 
+# https://w3id.org/udo#damageProbability
+<https://w3id.org/udo#damageProbability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/udo#damageProbability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#UndetectedDamage> .
+<https://w3id.org/udo#damageProbability> <http://www.w3.org/2000/01/rdf-schema#comment> "The probability that an Undetected Damage will exist."@en .
+<https://w3id.org/udo#damageProbability> <http://www.w3.org/2000/01/rdf-schema#label> "damage probability"@en .
+# 
+# https://w3id.org/udo#enumeration
+<https://w3id.org/udo#enumeration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/udo#enumeration> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#UncertainValue> .
+<https://w3id.org/udo#enumeration> <http://www.w3.org/2000/01/rdf-schema#comment> "References multiple values that could be set for an uncertain value (represented by an instance of udo:UncertainValue)"@en .
+<https://w3id.org/udo#enumeration> <http://www.w3.org/2000/01/rdf-schema#label> "enumeration"@en .
+# 
+# https://w3id.org/udo#maxValue
+<https://w3id.org/udo#maxValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/udo#maxValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#UncertainValue> .
+<https://w3id.org/udo#maxValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Maximum value of a value range that could be set for an uncertain value (represented by an instance of udo:UncertainValue)"@en .
+<https://w3id.org/udo#maxValue> <http://www.w3.org/2000/01/rdf-schema#label> "maximum value"@en .
+# 
+# https://w3id.org/udo#minValue
+<https://w3id.org/udo#minValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/udo#minValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#UncertainValue> .
+<https://w3id.org/udo#minValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Minimum value of a value range that could be set for an uncertain value (represented by an instance of udo:UncertainValue)"@en .
+<https://w3id.org/udo#minValue> <http://www.w3.org/2000/01/rdf-schema#label> "minimum value"@en .
+# 
+# https://w3id.org/udo#overallDamagePossibility
+<https://w3id.org/udo#overallDamagePossibility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/udo#overallDamagePossibility> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#UndetectedDamage> .
+<https://w3id.org/udo#overallDamagePossibility> <http://www.w3.org/2000/01/rdf-schema#comment> "The overall possibility that an Undetected Damage will exist. Sum of all related damage possibilities"@en .
+<https://w3id.org/udo#overallDamagePossibility> <http://www.w3.org/2000/01/rdf-schema#label> "overall damage possibility"@en .
+# 
+# https://w3id.org/udo#overallDamageProbability
+<https://w3id.org/udo#overallDamageProbability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/udo#overallDamageProbability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/udo#UndetectedDamage> .
+<https://w3id.org/udo#overallDamageProbability> <http://www.w3.org/2000/01/rdf-schema#comment> "The overall probability that an Undetected Damage will exist. Sum of all related damage probabilities"@en .
+<https://w3id.org/udo#overallDamageProbability> <http://www.w3.org/2000/01/rdf-schema#label> "overall damage probability"@en .
 # 
 # 
 # 
@@ -64,54 +154,41 @@ _:genid1 <http://xmlns.com/foaf/0.1/name> "Al-Hakam Hamdan" .
 # #################################################################
 # 
 # 
+# http://www.w3.org/2002/07/owl#Class
+# 
+# http://www.w3.org/2002/07/owl#DatatypeProperty
+# 
 # http://xmlns.com/foaf/0.1/Person
 # 
-# https://wisib.de/ontologie/damage/udo#UnclassifiedDamage
-<https://wisib.de/ontologie/damage/udo#UnclassifiedDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://wisib.de/ontologie/damage/udo#UnclassifiedDamage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3id.org/dot#Damage> .
+# https://w3id.org/udo#AmbigiousDamage
+<https://w3id.org/udo#AmbigiousDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/udo#AmbigiousDamage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3id.org/dot#Damage> .
 <https://www.w3id.org/dot#Damage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://wisib.de/ontologie/damage/udo#UnclassifiedDamage> <http://www.w3.org/2000/01/rdf-schema#comment> "A Damage that is not further classified with domain-specific classes"@en .
-<https://wisib.de/ontologie/damage/udo#UnclassifiedDamage> <http://www.w3.org/2000/01/rdf-schema#label> "Unclassified Damage"@en .
+<https://w3id.org/udo#AmbigiousDamage> <http://www.w3.org/2000/01/rdf-schema#comment> "A Damage that is not further classified with domain-specific classes"@en .
+<https://w3id.org/udo#AmbigiousDamage> <http://www.w3.org/2000/01/rdf-schema#label> "Ambigious Damage"@en .
 # 
-# https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage
-<https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid2 .
-_:genid2 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid5 .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid6 .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid6 <http://www.w3.org/2002/07/owl#complementOf> <https://www.w3id.org/dot#Defect> .
-<https://www.w3id.org/dot#Defect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid4 .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid4 <http://www.w3.org/2002/07/owl#complementOf> <https://www.w3id.org/dot#StructuralDamage> .
-<https://www.w3id.org/dot#StructuralDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://wisib.de/ontologie/damage/udo#UnclassifiedDamage> .
-<https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage> <http://www.w3.org/2000/01/rdf-schema#comment> "A Damage that has not been classified regarding its structural capability"@en .
-<https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage> <http://www.w3.org/2000/01/rdf-schema#label> "Unclassified Structural Damage"@en .
+# https://w3id.org/udo#ContradictingDamageClassList
+<https://w3id.org/udo#ContradictingDamageClassList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/udo#ContradictingDamageClassList> <http://www.w3.org/2000/01/rdf-schema#comment> "Functions as List that references contradicting damage classes (subclasses of dot:Damage) for a specific instance of udo:AmbigiousDamage"@en .
+<https://w3id.org/udo#ContradictingDamageClassList> <http://www.w3.org/2000/01/rdf-schema#label> "Contradicting Damage Class List"@en .
 # 
-# https://wisib.de/ontologie/damage/udo#UndetectedDamage
-<https://wisib.de/ontologie/damage/udo#UndetectedDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://wisib.de/ontologie/damage/udo#UndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3id.org/dot#Damage> .
-<https://wisib.de/ontologie/damage/udo#UndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#comment> "A Damage that has not been asserted or detected through inspections and therefore can only be reasoned by other facts."@en .
-<https://wisib.de/ontologie/damage/udo#UndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#label> "Undetected Damage"@en .
+# https://w3id.org/udo#UncertainValue
+<https://w3id.org/udo#UncertainValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/udo#UncertainValue> <http://www.w3.org/2000/01/rdf-schema#comment> "An auxiliary class for instantiating value objects that contain fuzzyness, e.g. a fuzzy value or reference. Thus an instance of udo:UncertainValue can reference value ranges (min and max) or enumerations."@en .
+<https://w3id.org/udo#UncertainValue> <http://www.w3.org/2000/01/rdf-schema#label> "Uncertain Value"@en .
 # 
-# https://wisib.de/ontologie/damage/udo#UnidentifiedDamage
-<https://wisib.de/ontologie/damage/udo#UnidentifiedDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://wisib.de/ontologie/damage/udo#UnidentifiedDamage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3id.org/dot#Damage> .
-<https://wisib.de/ontologie/damage/udo#UnidentifiedDamage> <http://www.w3.org/2000/01/rdf-schema#comment> "A Damage which has multiple asserted domain-specific classes, so that an unambigious classification of the respective Damage instance is not possible."@en .
-<https://wisib.de/ontologie/damage/udo#UnidentifiedDamage> <http://www.w3.org/2000/01/rdf-schema#label> "Unidentified Damage"@en .
+# https://w3id.org/udo#UndetectedDamage
+<https://w3id.org/udo#UndetectedDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/udo#UndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3id.org/dot#Damage> .
+<https://w3id.org/udo#UndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#comment> "A Damage that has not been asserted or detected through inspections and therefore can only be reasoned by other facts."@en .
+<https://w3id.org/udo#UndetectedDamage> <http://www.w3.org/2000/01/rdf-schema#label> "Undetected Damage"@en .
+# 
+# https://w3id.org/udo#UnidentifiedDamage
+<https://w3id.org/udo#UnidentifiedDamage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/udo#UnidentifiedDamage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3id.org/dot#Damage> .
+<https://w3id.org/udo#UnidentifiedDamage> <http://www.w3.org/2000/01/rdf-schema#comment> "A Damage which has multiple asserted domain-specific classes, so that an unambigious classification of the respective Damage instance is not possible."@en .
+<https://w3id.org/udo#UnidentifiedDamage> <http://www.w3.org/2000/01/rdf-schema#label> "Unidentified Damage"@en .
 # 
 # https://www.w3id.org/dot#Damage
 # 
-# https://www.w3id.org/dot#Defect
-# 
-# https://www.w3id.org/dot#StructuralDamage
-# 
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
-_:genid7 <http://xmlns.com/foaf/0.1/name> "Al-Hakam Hamdan" .
-# Generated by the OWL API (version 5.1.7) https://github.com/owlcs/owlapi/
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

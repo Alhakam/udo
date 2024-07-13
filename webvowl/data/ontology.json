@@ -1,0 +1,544 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://www.w3id.org/dot", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/udo", "http://xmlns.com/foaf/0.1" ],
+    "title" : {
+      "en" : "Uncertain Damage Ontology"
+    },
+    "iri" : "hhttps://w3id.org/udo",
+    "author" : [ "_:genid2147483648" ],
+    "description" : {
+      "en" : "Ontology that defines classes for uncertainties in damage assessment"
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/1.0",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "_:genid2147483648",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "udo",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/udo#",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "Uncertain Damage Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "13",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "14",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "19",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "5",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/udo#ContradictingDamageClassList",
+    "baseIri" : "https://w3id.org/udo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ContradictingDamageClassList",
+      "en" : "Contradicting Damage Class List"
+    },
+    "comment" : {
+      "en" : "Functions as List that references contradicting damage classes (subclasses of dot:Damage) for a specific instance of udo:AmbigiousDamage"
+    },
+    "attributes" : [ "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "8",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "10",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "13",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "14",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "15",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "16",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "19",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://w3id.org/udo#AmbigiousDamage",
+    "baseIri" : "https://w3id.org/udo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AmbigiousDamage",
+      "en" : "Ambigious Damage"
+    },
+    "comment" : {
+      "en" : "A Damage that is not further classified with domain-specific classes"
+    },
+    "attributes" : [ "external" ],
+    "id" : "18",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://w3id.org/udo#UndetectedDamage",
+    "baseIri" : "https://w3id.org/udo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UndetectedDamage",
+      "en" : "Undetected Damage"
+    },
+    "comment" : {
+      "en" : "A Damage that has not been asserted or detected through inspections and therefore can only be reasoned by other facts."
+    },
+    "attributes" : [ "external" ],
+    "id" : "6",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://w3id.org/udo#UnidentifiedDamage",
+    "baseIri" : "https://w3id.org/udo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UnidentifiedDamage",
+      "en" : "Unidentified Damage"
+    },
+    "comment" : {
+      "en" : "A Damage which has multiple asserted domain-specific classes, so that an unambigious classification of the respective Damage instance is not possible."
+    },
+    "attributes" : [ "external" ],
+    "id" : "21",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "https://www.w3id.org/dot#Damage",
+    "baseIri" : "https://www.w3id.org/dot",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Damage"
+    },
+    "subClasses" : [ "18", "6", "21" ],
+    "attributes" : [ "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "3",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "5",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://w3id.org/udo#UncertainValue",
+    "baseIri" : "https://w3id.org/udo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UncertainValue",
+      "en" : "Uncertain Value"
+    },
+    "comment" : {
+      "en" : "An auxiliary class for instantiating value objects that contain fuzzyness, e.g. a fuzzy value or reference. Thus an instance of udo:UncertainValue can reference value ranges (min and max) or enumerations."
+    },
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DatatypeProperty"
+    },
+    "attributes" : [ "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Person",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person"
+    },
+    "attributes" : [ "external" ],
+    "id" : "32"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Class",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Class"
+    },
+    "attributes" : [ "external" ],
+    "id" : "12"
+  } ],
+  "property" : [ {
+    "id" : "1",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "4",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "31",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/udo#minValue",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "minValue",
+      "en" : "minimum value"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "Minimum value of a value range that could be set for an uncertain value (represented by an instance of udo:UncertainValue)"
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "1"
+  }, {
+    "iri" : "https://w3id.org/udo#hasUndetectedDamage",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "hasUndetectedDamage",
+      "en" : "has undetected damage"
+    },
+    "superproperty" : [ "7" ],
+    "domain" : "5",
+    "comment" : {
+      "en" : "The relationship between a potentially damaged component and an undetected damage."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "4"
+  }, {
+    "iri" : "https://w3id.org/udo#referencesClass",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "referencesClass",
+      "en" : "references class"
+    },
+    "domain" : "0",
+    "comment" : {
+      "en" : "References an owl:Class that is part of a list of contradicting damage classes for an ambigious damage. The instance of owl:Class should be a subclass of dot:Damage."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/udo#hasContradictions",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "hasContradictions",
+      "en" : "has contradictions"
+    },
+    "domain" : "18",
+    "comment" : {
+      "en" : "References a list of contradicting damage classes that could possibly be determined for an ambigious damage (represented by an instance of udo:AmbigiousDamage)."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://w3id.org/udo#damageProbability",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "damageProbability",
+      "en" : "damage probability"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "The probability that an Undetected Damage will exist."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://w3id.org/udo#enumeration",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "enumeration",
+      "en" : "enumeration"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "References multiple values that could be set for an uncertain value (represented by an instance of udo:UncertainValue)"
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://w3id.org/udo#overallDamagePossibility",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "overallDamagePossibility",
+      "en" : "overall damage possibility"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "The overall possibility that an Undetected Damage will exist. Sum of all related damage possibilities"
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://w3id.org/udo#referencedDataProperty",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "referencedDataProperty",
+      "en" : "referenced DataProperty"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "References a specific owl:DataTypeProperty that is used for an uncertain value (represented by an instance of udo:UncertainValue)."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "26"
+  }, {
+    "iri" : "https://w3id.org/udo#hasUncertainValue",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasUncertainValue",
+      "en" : "has uncertain value"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Assigns a fuzzy value that characterizes an undetected damage (represented through an instance of udo:UndetectedDamage)."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "27"
+  }, {
+    "iri" : "https://w3id.org/udo#maxValue",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "maxValue",
+      "en" : "maximum value"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "Maximum value of a value range that could be set for an uncertain value (represented by an instance of udo:UncertainValue)"
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/udo#overallDamageProbability",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "overallDamageProbability",
+      "en" : "overall damage probability"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "The overall probability that an Undetected Damage will exist. Sum of all related damage probabilities"
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "29"
+  }, {
+    "iri" : "https://www.w3id.org/dot#hasDamage",
+    "baseIri" : "https://www.w3id.org/dot",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasDamage"
+    },
+    "domain" : "14",
+    "subproperty" : [ "4" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "7"
+  }, {
+    "range" : "20",
+    "domain" : "18",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "30"
+  }, {
+    "iri" : "https://w3id.org/udo#damagePossibilityFactor",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "damagePossibilityFactor",
+      "en" : "damage possibility factor"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "An auxiliary parameter that defines a partial possibility of occurence for a damage, usually inferred by a single damage assessment rule. The sum of all possibility factors of an instance of udo:UndetectedDamage can be used in conjunction with an appropriate membership function to determine the overall possibility."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "31"
+  }, {
+    "range" : "20",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "33"
+  }, {
+    "iri" : "https://w3id.org/udo#damagePossibility",
+    "baseIri" : "https://w3id.org/udo",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "damagePossibility",
+      "en" : "damage possibility"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "The possibility that an Undetected Damage can exist."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "34"
+  }, {
+    "range" : "20",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "35"
+  } ]
+}

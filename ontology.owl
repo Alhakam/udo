@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="hhttps://w3id.org/udo#"
+     xml:base="hhttps://w3id.org/udo"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="hhttps://w3id.org/udo">
+        <owl:versionIRI rdf:resource="https://w3id.org/udo/0.2"/>
+        <terms:creator rdf:nodeID="genid1"/>
+        <terms:description xml:lang="en">Ontology that defines classes for uncertainties in damage assessment</terms:description>
+        <terms:license>https://creativecommons.org/licenses/by/1.0</terms:license>
+        <terms:title xml:lang="en">Uncertain Damage Ontology</terms:title>
+        <vann:preferredNamespacePrefix>udo</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/udo#</vann:preferredNamespaceUri>
+    </owl:Ontology>
+    <rdf:Description rdf:nodeID="genid1">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <foaf:name>Al-Hakam Hamdan</foaf:name>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/udo#hasContradictions -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/udo#hasContradictions">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#AmbigiousDamage"/>
+        <rdfs:range rdf:resource="https://w3id.org/udo#ContradictingDamageClassList"/>
+        <rdfs:comment xml:lang="en">References a list of contradicting damage classes that could possibly be determined for an ambigious damage (represented by an instance of udo:AmbigiousDamage).</rdfs:comment>
+        <rdfs:label xml:lang="en">has contradictions</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/udo#hasUncertainValue -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/udo#hasUncertainValue">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#UndetectedDamage"/>
+        <rdfs:range rdf:resource="https://w3id.org/udo#UncertainValue"/>
+        <rdfs:comment xml:lang="en">Assigns a fuzzy value that characterizes an undetected damage (represented through an instance of udo:UndetectedDamage).</rdfs:comment>
+        <rdfs:label xml:lang="en">has uncertain value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/udo#hasUndetectedDamage -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/udo#hasUndetectedDamage">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3id.org/dot#hasDamage"/>
+        <rdfs:range rdf:resource="https://w3id.org/udo#UndetectedDamage"/>
+        <rdfs:comment xml:lang="en">The relationship between a potentially damaged component and an undetected damage.</rdfs:comment>
+        <rdfs:label xml:lang="en">has undetected damage</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/udo#referencedDataProperty -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/udo#referencedDataProperty">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#UncertainValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:comment xml:lang="en">References a specific owl:DataTypeProperty that is used for an uncertain value (represented by an instance of udo:UncertainValue).</rdfs:comment>
+        <rdfs:label xml:lang="en">referenced DataProperty</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/udo#referencesClass -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/udo#referencesClass">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#ContradictingDamageClassList"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:comment xml:lang="en">References an owl:Class that is part of a list of contradicting damage classes for an ambigious damage. The instance of owl:Class should be a subclass of dot:Damage.</rdfs:comment>
+        <rdfs:label xml:lang="en">references class</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.w3id.org/dot#hasDamage -->
+
+
+    <owl:ObjectProperty rdf:about="https://www.w3id.org/dot#hasDamage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/udo#damagePossibility -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/udo#damagePossibility">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#UndetectedDamage"/>
+        <rdfs:comment xml:lang="en">The possibility that an Undetected Damage can exist.</rdfs:comment>
+        <rdfs:label xml:lang="en">damage possibility</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/udo#damagePossibilityFactor -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/udo#damagePossibilityFactor">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#UndetectedDamage"/>
+        <rdfs:comment xml:lang="en">An auxiliary parameter that defines a partial possibility of occurence for a damage, usually inferred by a single damage assessment rule. The sum of all possibility factors of an instance of udo:UndetectedDamage can be used in conjunction with an appropriate membership function to determine the overall possibility.</rdfs:comment>
+        <rdfs:label xml:lang="en">damage possibility factor</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/udo#damageProbability -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/udo#damageProbability">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#UndetectedDamage"/>
+        <rdfs:comment xml:lang="en">The probability that an Undetected Damage will exist.</rdfs:comment>
+        <rdfs:label xml:lang="en">damage probability</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/udo#enumeration -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/udo#enumeration">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#UncertainValue"/>
+        <rdfs:comment xml:lang="en">References multiple values that could be set for an uncertain value (represented by an instance of udo:UncertainValue)</rdfs:comment>
+        <rdfs:label xml:lang="en">enumeration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/udo#maxValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/udo#maxValue">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#UncertainValue"/>
+        <rdfs:comment xml:lang="en">Maximum value of a value range that could be set for an uncertain value (represented by an instance of udo:UncertainValue)</rdfs:comment>
+        <rdfs:label xml:lang="en">maximum value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/udo#minValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/udo#minValue">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#UncertainValue"/>
+        <rdfs:comment xml:lang="en">Minimum value of a value range that could be set for an uncertain value (represented by an instance of udo:UncertainValue)</rdfs:comment>
+        <rdfs:label xml:lang="en">minimum value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/udo#overallDamagePossibility -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/udo#overallDamagePossibility">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#UndetectedDamage"/>
+        <rdfs:comment xml:lang="en">The overall possibility that an Undetected Damage will exist. Sum of all related damage possibilities</rdfs:comment>
+        <rdfs:label xml:lang="en">overall damage possibility</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/udo#overallDamageProbability -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/udo#overallDamageProbability">
+        <rdfs:domain rdf:resource="https://w3id.org/udo#UndetectedDamage"/>
+        <rdfs:comment xml:lang="en">The overall probability that an Undetected Damage will exist. Sum of all related damage probabilities</rdfs:comment>
+        <rdfs:label xml:lang="en">overall damage probability</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Class -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Class"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#DatatypeProperty -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- https://w3id.org/udo#AmbigiousDamage -->
+
+
+    <owl:Class rdf:about="https://w3id.org/udo#AmbigiousDamage">
+        <rdfs:subClassOf rdf:resource="https://www.w3id.org/dot#Damage"/>
+        <rdfs:comment xml:lang="en">A Damage that is not further classified with domain-specific classes</rdfs:comment>
+        <rdfs:label xml:lang="en">Ambigious Damage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/udo#ContradictingDamageClassList -->
+
+
+    <owl:Class rdf:about="https://w3id.org/udo#ContradictingDamageClassList">
+        <rdfs:comment xml:lang="en">Functions as List that references contradicting damage classes (subclasses of dot:Damage) for a specific instance of udo:AmbigiousDamage</rdfs:comment>
+        <rdfs:label xml:lang="en">Contradicting Damage Class List</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/udo#UncertainValue -->
+
+
+    <owl:Class rdf:about="https://w3id.org/udo#UncertainValue">
+        <rdfs:comment xml:lang="en">An auxiliary class for instantiating value objects that contain fuzzyness, e.g. a fuzzy value or reference. Thus an instance of udo:UncertainValue can reference value ranges (min and max) or enumerations.</rdfs:comment>
+        <rdfs:label xml:lang="en">Uncertain Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/udo#UndetectedDamage -->
+
+
+    <owl:Class rdf:about="https://w3id.org/udo#UndetectedDamage">
+        <rdfs:subClassOf rdf:resource="https://www.w3id.org/dot#Damage"/>
+        <rdfs:comment xml:lang="en">A Damage that has not been asserted or detected through inspections and therefore can only be reasoned by other facts.</rdfs:comment>
+        <rdfs:label xml:lang="en">Undetected Damage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/udo#UnidentifiedDamage -->
+
+
+    <owl:Class rdf:about="https://w3id.org/udo#UnidentifiedDamage">
+        <rdfs:subClassOf rdf:resource="https://www.w3id.org/dot#Damage"/>
+        <rdfs:comment xml:lang="en">A Damage which has multiple asserted domain-specific classes, so that an unambigious classification of the respective Damage instance is not possible.</rdfs:comment>
+        <rdfs:label xml:lang="en">Unidentified Damage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.w3id.org/dot#Damage -->
+
+
+    <owl:Class rdf:about="https://www.w3id.org/dot#Damage"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

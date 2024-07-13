@@ -1,190 +1,396 @@
-<html><h2 id="crossreference" class="list">Cross reference for Uncertain Damage Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="crossreference" class="list">Cross-reference for Uncertain Damage Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 This section provides details for each class and property defined by Uncertain Damage Ontology.
-<div id="classes">
-   <h3 id="classes-headline" class="list">Classes</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#UnclassifiedDamage"
-            title="https://wisib.de/ontologie/damage/udo#UnclassifiedDamage">Unclassified Damage</a>
-      </li>
-      <li>
-         <a href="#UnclassifiedStructuralDamage"
-            title="https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage">Unclassified Structural Damage</a>
-      </li>
-      <li>
-         <a href="#UndetectedDamage"
-            title="https://wisib.de/ontologie/damage/udo#UndetectedDamage">Undetected Damage</a>
-      </li>
-      <li>
-         <a href="#UnidentifiedDamage"
-            title="https://wisib.de/ontologie/damage/udo#UnidentifiedDamage">Unidentified Damage</a>
-      </li>
-   </ul>
-   <div class="entity" id="UnclassifiedDamage">
-      <h3>Unclassified Damage<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#UnclassifiedDamage</p>
-      <div class="comment">
-         <span class="markdown">A Damage that is not further classified with domain-specific classes</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <span class="dotted" title="https://www.w3id.org/dot#Damage">damage</span>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#UnclassifiedStructuralDamage"
-               title="https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage">Unclassified Structural Damage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="UnclassifiedStructuralDamage">
-      <h3>Unclassified Structural Damage<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#UnclassifiedStructuralDamage</p>
-      <div class="comment">
-         <span class="markdown">A Damage that has not been classified regarding its structural capability</span>
-      </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>(<span class="logic">not</span> (<span class="dotted" title="https://www.w3id.org/dot#Defect">defect</span>
-            <sup class="type-c" title="class">c</sup>)) <span class="logic">and</span> (<span class="logic">not</span> (<span class="dotted" title="https://www.w3id.org/dot#StructuralDamage">structural damage</span>
-            <sup class="type-c" title="class">c</sup>))</dd>
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#UnclassifiedDamage"
-               title="https://wisib.de/ontologie/damage/udo#UnclassifiedDamage">Unclassified Damage</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="UndetectedDamage">
-      <h3>Undetected Damage<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#UndetectedDamage</p>
-      <div class="comment">
-         <span class="markdown">A Damage that has not been asserted or detected through inspections and therefore can only be reasoned by other facts.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <span class="dotted" title="https://www.w3id.org/dot#Damage">damage</span>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#damageProbability"
-               title="https://wisib.de/ontologie/damage/udo#damageProbability">damage probability</a>
-            <sup class="type-dp" title="data property">dp</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasUndetectedDamage"
-               title="https://wisib.de/ontologie/damage/udo#hasUndetectedDamage">has undetected damage</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="UnidentifiedDamage">
-      <h3>Unidentified Damage<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#UnidentifiedDamage</p>
-      <div class="comment">
-         <span class="markdown">A Damage which has multiple asserted domain-specific classes, so that an unambigious classification of the respective Damage instance is not possible.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <span class="dotted" title="https://www.w3id.org/dot#Damage">damage</span>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-</div><div id="objectproperties">
-   <h3 id="properties" class="list">Object Properties</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#hasUndetectedDamage"
-            title="https://wisib.de/ontologie/damage/udo#hasUndetectedDamage">has undetected damage</a>
-      </li>
-   </ul>
-   <div class="entity" id="hasUndetectedDamage">
-      <h3>has undetected damage<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#hasUndetectedDamage</p>
-      <div class="comment">
-         <span class="markdown">The relationship between a potentially damaged component and an undetected damage.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="https://www.w3id.org/dot#hasDamage">has damage</span>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#UndetectedDamage"
-                  title="https://wisib.de/ontologie/damage/udo#UndetectedDamage">Undetected Damage</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-</div><div id="dataproperties">
-   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#damageProbability"
-            title="https://wisib.de/ontologie/damage/udo#damageProbability">damage probability</a>
-      </li>
-   </ul>
-   <div class="entity" id="damageProbability">
-      <h3>damage probability<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://wisib.de/ontologie/damage/udo#damageProbability</p>
-      <div class="comment">
-         <span class="markdown">The probability that an Undetected Damage will exist.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#UndetectedDamage"
-                  title="https://wisib.de/ontologie/damage/udo#UndetectedDamage">Undetected Damage</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#AmbigiousDamage" title="https://w3id.org/udo#AmbigiousDamage">Ambigious Damage</a></li>
+  <li><a href="#ContradictingDamageClassList" title="https://w3id.org/udo#ContradictingDamageClassList">Contradicting Damage Class List</a></li>
+  <li><a href="#UncertainValue" title="https://w3id.org/udo#UncertainValue">Uncertain Value</a></li>
+  <li><a href="#UndetectedDamage" title="https://w3id.org/udo#UndetectedDamage">Undetected Damage</a></li>
+  <li><a href="#UnidentifiedDamage" title="https://w3id.org/udo#UnidentifiedDamage">Unidentified Damage</a></li>
+ </ul>
+ <div class="entity" id="AmbigiousDamage">
+  <h3>Ambigious Damage<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#AmbigiousDamage</p>
+  <div class="comment">
+   <span class="markdown">A Damage that is not further classified with domain-specific classes</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://www.w3id.org/dot#Damage" target="_blank" title="https://www.w3id.org/dot#Damage">Damage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasContradictions" title="https://w3id.org/udo#hasContradictions">has contradictions</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ContradictingDamageClassList">
+  <h3>Contradicting Damage Class List<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#ContradictingDamageClassList</p>
+  <div class="comment">
+   <span class="markdown">Functions as List that references contradicting damage classes (subclasses of dot:Damage) for a specific instance of udo:AmbigiousDamage</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#referencesClass" title="https://w3id.org/udo#referencesClass">references class</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasContradictions" title="https://w3id.org/udo#hasContradictions">has contradictions</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="UncertainValue">
+  <h3>Uncertain Value<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#UncertainValue</p>
+  <div class="comment">
+   <span class="markdown">An auxiliary class for instantiating value objects that contain fuzzyness, e.g. a fuzzy value or reference. Thus an instance of udo:UncertainValue can reference value ranges (min and max) or enumerations.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#enumeration" title="https://w3id.org/udo#enumeration">enumeration</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#maxValue" title="https://w3id.org/udo#maxValue">maximum value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#minValue" title="https://w3id.org/udo#minValue">minimum value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#referencedDataProperty" title="https://w3id.org/udo#referencedDataProperty">referenced DataProperty</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasUncertainValue" title="https://w3id.org/udo#hasUncertainValue">has uncertain value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="UndetectedDamage">
+  <h3>Undetected Damage<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#UndetectedDamage</p>
+  <div class="comment">
+   <span class="markdown">A Damage that has not been asserted or detected through inspections and therefore can only be reasoned by other facts.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://www.w3id.org/dot#Damage" target="_blank" title="https://www.w3id.org/dot#Damage">Damage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#damagePossibility" title="https://w3id.org/udo#damagePossibility">damage possibility</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#damagePossibilityFactor" title="https://w3id.org/udo#damagePossibilityFactor">damage possibility factor</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#damageProbability" title="https://w3id.org/udo#damageProbability">damage probability</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasUncertainValue" title="https://w3id.org/udo#hasUncertainValue">has uncertain value</a> <sup class="type-op" title="object property">op</sup>, <a href="#overallDamagePossibility" title="https://w3id.org/udo#overallDamagePossibility">overall damage possibility</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#overallDamageProbability" title="https://w3id.org/udo#overallDamageProbability">overall damage probability</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasUndetectedDamage" title="https://w3id.org/udo#hasUndetectedDamage">has undetected damage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="UnidentifiedDamage">
+  <h3>Unidentified Damage<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#UnidentifiedDamage</p>
+  <div class="comment">
+   <span class="markdown">A Damage which has multiple asserted domain-specific classes, so that an unambigious classification of the respective Damage instance is not possible.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://www.w3id.org/dot#Damage" target="_blank" title="https://www.w3id.org/dot#Damage">Damage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#hasContradictions" title="https://w3id.org/udo#hasContradictions">has contradictions</a></li>
+  <li><a href="#hasUncertainValue" title="https://w3id.org/udo#hasUncertainValue">has uncertain value</a></li>
+  <li><a href="#hasUndetectedDamage" title="https://w3id.org/udo#hasUndetectedDamage">has undetected damage</a></li>
+  <li><a href="#referencedDataProperty" title="https://w3id.org/udo#referencedDataProperty">referenced DataProperty</a></li>
+  <li><a href="#referencesClass" title="https://w3id.org/udo#referencesClass">references class</a></li>
+ </ul>
+ <div class="entity" id="hasContradictions">
+  <h3>has contradictions<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#hasContradictions</p>
+  <div class="comment">
+   <span class="markdown">References a list of contradicting damage classes that could possibly be determined for an ambigious damage (represented by an instance of udo:AmbigiousDamage).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AmbigiousDamage" title="https://w3id.org/udo#AmbigiousDamage">Ambigious Damage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ContradictingDamageClassList" title="https://w3id.org/udo#ContradictingDamageClassList">Contradicting Damage Class List</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasUncertainValue">
+  <h3>has uncertain value<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#hasUncertainValue</p>
+  <div class="comment">
+   <span class="markdown">Assigns a fuzzy value that characterizes an undetected damage (represented through an instance of udo:UndetectedDamage).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UndetectedDamage" title="https://w3id.org/udo#UndetectedDamage">Undetected Damage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#UncertainValue" title="https://w3id.org/udo#UncertainValue">Uncertain Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasUndetectedDamage">
+  <h3>has undetected damage<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#hasUndetectedDamage</p>
+  <div class="comment">
+   <span class="markdown">The relationship between a potentially damaged component and an undetected damage.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="https://www.w3id.org/dot#hasDamage" target="_blank" title="https://www.w3id.org/dot#hasDamage">has Damage</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#UndetectedDamage" title="https://w3id.org/udo#UndetectedDamage">Undetected Damage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="referencedDataProperty">
+  <h3>referenced DataProperty<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#referencedDataProperty</p>
+  <div class="comment">
+   <span class="markdown">References a specific owl:DataTypeProperty that is used for an uncertain value (represented by an instance of udo:UncertainValue).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UncertainValue" title="https://w3id.org/udo#UncertainValue">Uncertain Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#DatatypeProperty" target="_blank" title="http://www.w3.org/2002/07/owl#DatatypeProperty">Datatype Property</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="referencesClass">
+  <h3>references class<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#referencesClass</p>
+  <div class="comment">
+   <span class="markdown">References an owl:Class that is part of a list of contradicting damage classes for an ambigious damage. The instance of owl:Class should be a subclass of dot:Damage.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ContradictingDamageClassList" title="https://w3id.org/udo#ContradictingDamageClassList">Contradicting Damage Class List</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#Class" target="_blank" title="http://www.w3.org/2002/07/owl#Class">Class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#damagePossibility" title="https://w3id.org/udo#damagePossibility">damage possibility</a></li>
+  <li><a href="#damagePossibilityFactor" title="https://w3id.org/udo#damagePossibilityFactor">damage possibility factor</a></li>
+  <li><a href="#damageProbability" title="https://w3id.org/udo#damageProbability">damage probability</a></li>
+  <li><a href="#enumeration" title="https://w3id.org/udo#enumeration">enumeration</a></li>
+  <li><a href="#maxValue" title="https://w3id.org/udo#maxValue">maximum value</a></li>
+  <li><a href="#minValue" title="https://w3id.org/udo#minValue">minimum value</a></li>
+  <li><a href="#overallDamagePossibility" title="https://w3id.org/udo#overallDamagePossibility">overall damage possibility</a></li>
+  <li><a href="#overallDamageProbability" title="https://w3id.org/udo#overallDamageProbability">overall damage probability</a></li>
+ </ul>
+ <div class="entity" id="damagePossibility">
+  <h3>damage possibility<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#damagePossibility</p>
+  <div class="comment">
+   <span class="markdown">The possibility that an Undetected Damage can exist.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UndetectedDamage" title="https://w3id.org/udo#UndetectedDamage">Undetected Damage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="damagePossibilityFactor">
+  <h3>damage possibility factor<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#damagePossibilityFactor</p>
+  <div class="comment">
+   <span class="markdown">An auxiliary parameter that defines a partial possibility of occurence for a damage, usually inferred by a single damage assessment rule. The sum of all possibility factors of an instance of udo:UndetectedDamage can be used in conjunction with an appropriate membership function to determine the overall possibility.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UndetectedDamage" title="https://w3id.org/udo#UndetectedDamage">Undetected Damage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="damageProbability">
+  <h3>damage probability<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#damageProbability</p>
+  <div class="comment">
+   <span class="markdown">The probability that an Undetected Damage will exist.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UndetectedDamage" title="https://w3id.org/udo#UndetectedDamage">Undetected Damage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="enumeration">
+  <h3>enumeration<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#enumeration</p>
+  <div class="comment">
+   <span class="markdown">References multiple values that could be set for an uncertain value (represented by an instance of udo:UncertainValue)</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UncertainValue" title="https://w3id.org/udo#UncertainValue">Uncertain Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="maxValue">
+  <h3>maximum value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#maxValue</p>
+  <div class="comment">
+   <span class="markdown">Maximum value of a value range that could be set for an uncertain value (represented by an instance of udo:UncertainValue)</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UncertainValue" title="https://w3id.org/udo#UncertainValue">Uncertain Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="minValue">
+  <h3>minimum value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#minValue</p>
+  <div class="comment">
+   <span class="markdown">Minimum value of a value range that could be set for an uncertain value (represented by an instance of udo:UncertainValue)</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UncertainValue" title="https://w3id.org/udo#UncertainValue">Uncertain Value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="overallDamagePossibility">
+  <h3>overall damage possibility<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#overallDamagePossibility</p>
+  <div class="comment">
+   <span class="markdown">The overall possibility that an Undetected Damage will exist. Sum of all related damage possibilities</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UndetectedDamage" title="https://w3id.org/udo#UndetectedDamage">Undetected Damage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="overallDamageProbability">
+  <h3>overall damage probability<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/udo#overallDamageProbability</p>
+  <div class="comment">
+   <span class="markdown">The overall probability that an Undetected Damage will exist. Sum of all related damage probabilities</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UndetectedDamage" title="https://w3id.org/udo#UndetectedDamage">Undetected Damage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <div   class="entity">
 <sup class="type-c" title="Classes">c</sup>: Classes <br/>
 <sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
 <sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
-<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
 </div>
 </div>
-</html>
