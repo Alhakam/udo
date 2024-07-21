@@ -6,3 +6,6 @@ The namespace for UDO terms is <span class="repeated" style="font-family: courie
 The suggested prefix for the UDO namespace is <span class="repeated" style="font-family: courier;">udo</span>
 
 UDO is an extension of the existing ontology <a href="https://w3id.org/dot">DOT</a> and therefore reuses various classes and properties from it.
+
+## Examples for inferring undetected damages
+Examples for SHACL rules that utilize UDO can be found in the example/example_rules directory. A corresponding test-case can be found in the example/testcase directory. There, ABoxes are deployed on which the SHACL rules can be applied.
