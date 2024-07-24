@@ -1,0 +1,78 @@
+@prefix uc: <https://wisib.de/ontologie/rules/undetectedCrack#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix brcomp: <https://w3id.org/brcomp#> .
+@prefix bmat: <https://w3id.org/bmat#> .
+@prefix udo: <https://w3id.org/udo#> .
+@prefix brot: <https://w3id.org/brot#> .
+@prefix bridge: <https://w3id.org/bridge#> .
+
+owl:NamedIndividual
+	a rdfs:Class, sh:NodeShape ;
+	sh:rule uc:DamageAssertion ;
+.
+uc:MaterialCheck
+	a sh:PropertyShape ;
+	sh:path bmat:hasBuildingMaterial ;
+	sh:qualifiedMinCount 1 ;
+		sh:qualifiedValueShape [
+	    	sh:class bmat:ReinforcedConcrete ;
+	    ] ;
+.
+uc:CoupleJointCheck
+	a sh:PropertyShape ;
+	sh:path brot:aggregates ;
+	sh:qualifiedMinCount 1 ;
+		sh:qualifiedValueShape [
+	    	sh:class brcomp:CouplingJoint ;
+	    ] ;
+.
+uc:DamageCreation
+	a sh:SPARQLFunction ;
+	rdfs:comment "Creates a new individual of udo:UndetectedDamage" ;
+	sh:select """
+		SELECT  IRI(CONCAT(STR(NOW()), STR(CEIL((RAND() * 30000)))))
+		WHERE {
+		}
+	"""
+.
+uc:ConstructionYear
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath brot:containsComponent ] ;
+    sh:qualifiedValueShape [
+    	sh:path bridge:constructionYear ;
+        sh:minCount 1 ;
+        sh:minInclusive 1000 ;
+        sh:maxInclusive 2011 ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+uc:BoxGirder
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath brot:containsComponent ] ;
+    sh:qualifiedValueShape [
+    	sh:class bridge:BoxGirderBridge ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+uc:DamageAssertion
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 0 ;
+	sh:subject sh:this ;
+	sh:predicate uc:hasUndetectedCrack ;
+	sh:object [
+	    uc:DamageCreation () ;
+	] ;
+	sh:condition [
+	    sh:and (
+	        [ sh:property uc:Materialcheck ; ]
+	        [ sh:property uc:CoupleJointCheck ; ]
+	        [ sh:or (
+	        	[ sh:property uc:ConstructionYear ; ]
+	        	[ sh:property uc:BoxGirder ; ]
+	        ) ]
+        )
+	] ;
+.

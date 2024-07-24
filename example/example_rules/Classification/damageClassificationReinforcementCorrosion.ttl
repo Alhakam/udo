@@ -1,0 +1,605 @@
+@prefix urc: <https://wisib.de/ontologie/rules/undetectedReinforcementCorrosion#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix brcomp: <https://w3id.org/brcomp#> .
+@prefix udo: <https://w3id.org/udo#> .
+@prefix brot: <https://w3id.org/brot#> .
+@prefix bridge: <https://w3id.org/bridge#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dot: <https://w3id.org/dot#> .
+@prefix cdo: <https://wisib.de/ontologie/damage/cdo#> .
+
+#################################################################
+#    Node Shapes
+#################################################################
+
+urc:UndetectedDamage
+	a sh:NodeShape ;
+	sh:targetObjectsOf urc:hasUndetectedReinforcementCorrosion ;
+	sh:rule urc:IndividualCreateType ,
+			urc:UDCreateType ,
+			urc:CreateProbability2011 ,
+			urc:CreateProbability2009 ,
+			urc:CreateProbability2003 ,
+			urc:CreateProbability2001 ,
+			urc:CreateProbability1995 ,
+			urc:CreateProbability1990 ,
+			urc:CreateProbability1987 ,
+			urc:CreateProbability1985 ,
+			urc:CreateProbability1982 ,
+			urc:CreateProbability1979 ,
+			urc:CreateProbability1971 ,
+			urc:CreateProbability1952 ,
+			urc:CreateProbability1919 ,
+			urc:SprayProbability ,
+			urc:SplashWaterProbability ,
+			urc:SeaWaterProbability ,
+			urc:CarbonatationProbability ,
+			urc:CrackProbability ,
+			urc:SpallingProbability ,
+			urc:SpallingExposedReinforcementProbability ,
+			urc:CoarseGrainAggregateProbability ,
+			urc:AlkaliSilicaReactionProbability ,
+			urc:CreateReinforcementCorrosion ,
+			urc:UDCreateStructuralDamage ;
+.
+urc:UDCreateType
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object udo:UndetectedDamage ;
+.
+urc:IndividualCreateType
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object owl:NamedIndividual ;
+.
+urc:UDCreateStructuralDamage
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object dot:StructuralDamage ;
+.
+urc:ConstructionYear2011
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 2010 ;
+                	sh:maxInclusive 2011 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear2009
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 2004 ;
+                	sh:maxInclusive 2009 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear2003
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 2002 ;
+                	sh:maxInclusive 2003 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear2001
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 1996 ;
+                	sh:maxInclusive 2001 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear1995
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 1991 ;
+                	sh:maxInclusive 1995 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear1990
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 1988 ;
+                	sh:maxInclusive 1990 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear1987
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 1986 ;
+                	sh:maxInclusive 1987 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear1985
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 1983 ;
+                	sh:maxInclusive 1985 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear1982
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 1980 ;
+                	sh:maxInclusive 1982 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear1979
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 1972 ;
+                	sh:maxInclusive 1979 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear1971
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 1953 ;
+                	sh:maxInclusive 1971 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear1952
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 1920 ;
+                	sh:maxInclusive 1952 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:ConstructionYear1919
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:maxInclusive 1919 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+urc:Spray
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:class brcomp:Girder ;
+	    	]
+.
+urc:SplashWater
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:class brcomp:Pier ;
+	    	]
+.
+urc:SeaWater
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:path brcomp:seaWaterContact ;
+                sh:hasValue true ;
+	    	]
+.
+urc:Carbonatation
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:Carbonatation ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+	    		] 
+			]
+.
+urc:Crack
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:Crack ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+				] 
+			]
+.
+urc:Spalling
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:Spalling ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+				] 
+			]
+.
+urc:SpallingExposedReinforcement
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:SpallingExposedReinforcement ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+				] 
+			]
+.
+urc:CoarseGrainAggregate
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:CoarseGrainAggregate ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+				] 
+			]
+.
+urc:AlkaliSilicaReaction
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedReinforcementCorrosion ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:AlkaliSilicaReaction ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+				] 
+			]
+.
+urc:CreateProbability2011
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 0.1 ;
+	sh:condition [ sh:property urc:ConstructionYear2011 ; ]
+.
+urc:CreateProbability2009
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 0.2 ;
+	sh:condition [ sh:property urc:ConstructionYear2009 ; ]
+.
+urc:CreateProbability2003
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 0.3 ;
+	sh:condition [ sh:property urc:ConstructionYear2003 ; ]
+.
+urc:CreateProbability2001
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 0.4 ;
+	sh:condition [ sh:property urc:ConstructionYear2001 ; ]
+.
+urc:CreateProbability1995
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 0.5 ;
+	sh:condition [ sh:property urc:ConstructionYear1995 ; ]
+.
+urc:CreateProbability1990
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 0.6 ;
+	sh:condition [ sh:property urc:ConstructionYear1990 ; ]
+.
+urc:CreateProbability1987
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 0.7 ;
+	sh:condition [ sh:property urc:ConstructionYear1987 ; ]
+.
+urc:CreateProbability1985
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 0.8 ;
+	sh:condition [ sh:property urc:ConstructionYear1985 ; ]
+.
+urc:CreateProbability1982
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 0.9 ;
+	sh:condition [ sh:property urc:ConstructionYear1982 ; ]
+.
+urc:CreateProbability1979
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property urc:ConstructionYear1979 ; ]
+.
+urc:CreateProbability1971
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 4.0 ;
+	sh:condition [ sh:property urc:ConstructionYear1971 ; ]
+.
+urc:CreateProbability1952
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 4.5 ;
+	sh:condition [ sh:property urc:ConstructionYear1952 ; ]
+.
+urc:CreateProbability1919
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 4.7 ;
+	sh:condition [ sh:property urc:ConstructionYear1919 ; ]
+.
+urc:SprayProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.2 ;
+	sh:condition [ sh:property urc:Spray ; ]
+.
+urc:SplashWaterProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 7.0 ;
+	sh:condition [ sh:property urc:SplashWater ; ]
+.
+urc:SeaWaterProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 7.0 ;
+	sh:condition [ sh:property urc:SeaWater ; ]
+.
+urc:CarbonatationProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 10.0 ;
+	sh:condition [ sh:property urc:Carbonatation ; ]
+.
+urc:CrackProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property urc:Crack ; ]
+.
+urc:SpallingProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property urc:Spalling ; ]
+.
+urc:SpallingExposedReinforcementProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 10.0 ;
+	sh:condition [ sh:property urc:SpallingExposedReinforcement ; ]
+.
+urc:CoarseGrainAggregateProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property urc:CoarseGrainAggregate ; ]
+.
+urc:AlkaliSilicaReactionProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property urc:AlkaliSilicaReaction ; ]
+.
+urc:CreateReinforcementCorrosion
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 3 ;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object cdo:ReinforcementCorrosion ;
+	sh:condition [
+		sh:or (
+	        	[ sh:property urc:ConstructionYear2011 ; ]
+	        	[ sh:property urc:ConstructionYear2009 ; ]
+	        	[ sh:property urc:ConstructionYear2003 ; ]
+	        	[ sh:property urc:ConstructionYear2001 ; ]
+	        	[ sh:property urc:ConstructionYear1995 ; ]
+	        	[ sh:property urc:ConstructionYear1990 ; ]
+	        	[ sh:property urc:ConstructionYear1987 ; ]
+	        	[ sh:property urc:ConstructionYear1985 ; ]
+	        	[ sh:property urc:ConstructionYear1982 ; ]
+	        	[ sh:property urc:ConstructionYear1979 ; ]
+	        	[ sh:property urc:ConstructionYear1971 ; ]
+	        	[ sh:property urc:ConstructionYear1952 ; ]
+	        	[ sh:property urc:ConstructionYear1919 ; ]
+	        	[ sh:property urc:Spray ; ]
+	        	[ sh:property urc:SplashWater ; ]
+	        	[ sh:property urc:SeaWater ; ]
+	        	[ sh:property urc:Carbonatation ; ]
+	        	[ sh:property urc:Crack ; ]
+	        	[ sh:property urc:Spalling ; ]
+	        	[ sh:property urc:SpallingExposedReinforcement ; ]
+	        	[ sh:property urc:CoarseGrainAggregate ; ]
+	        	[ sh:property urc:AlkaliSilicaReaction ; ]
+	        )
+	]
+.

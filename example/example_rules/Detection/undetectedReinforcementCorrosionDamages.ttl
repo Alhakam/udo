@@ -1,0 +1,124 @@
+@prefix urc: <https://wisib.de/ontologie/rules/undetectedReinforcementCorrosion#> .
+@prefix brcomp: <https://w3id.org/brcomp#> .
+@prefix bmat: <https://w3id.org/bmat#> .
+@prefix udo: <https://w3id.org/udo#> .
+@prefix brot: <https://w3id.org/brot#> .
+@prefix bridge: <https://w3id.org/bridge#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dot: <http://w3id.org/dot#> .
+@prefix cdo: <https://wisib.de/ontologie/damage/cdo#> .
+
+owl:NamedIndividual
+	a rdfs:Class, sh:NodeShape ;
+	sh:rule urc:DamageAssertion ;
+.
+urc:MaterialCheck
+	a sh:PropertyShape ;
+	sh:path bmat:hasBuildingMaterial ;
+	sh:qualifiedMinCount 1 ;
+		sh:qualifiedValueShape [
+	    	sh:class bmat:ReinforcedConcrete ;
+	    ] ;
+.
+urc:DamageCreation
+	a sh:SPARQLFunction ;
+	rdfs:comment "Creates a new individual of udo:UndetectedDamage" ;
+	sh:select """
+		SELECT  IRI(CONCAT(STR(NOW()), STR(CEIL((RAND() * 10000)))))
+		WHERE {
+		}
+	"""
+.
+urc:ConstructionYear
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath brot:containsComponent ] ;
+    sh:qualifiedValueShape [
+    	sh:path bridge:constructionYear ;
+        sh:minCount 1 ;
+        sh:minInclusive 1000 ;
+        sh:maxInclusive 2011 ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+urc:SeaWater
+	a sh:PropertyShape ;
+	sh:path brcomp:seaWaterContact ;
+    sh:hasValue true ;
+.
+urc:Carbonatation
+	a sh:PropertyShape ;
+	sh:path dot:hasDamage ;
+    sh:qualifiedValueShape [
+    	sh:class cdo:Carbonatation ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+urc:Crack
+	a sh:PropertyShape ;
+	sh:path dot:hasDamage ;
+    sh:qualifiedValueShape [
+    	sh:class cdo:Crack ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+urc:Spalling
+	a sh:PropertyShape ;
+	sh:path dot:hasDamage ;
+    sh:qualifiedValueShape [
+    	sh:class cdo:Spalling ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+urc:SpallingExposedReinforcement
+	a sh:PropertyShape ;
+	sh:path dot:hasDamage ;
+    sh:qualifiedValueShape [
+    	sh:class cdo:SpallingExposedReinforcement ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+urc:CoarseGrainAggregate
+	a sh:PropertyShape ;
+	sh:path dot:hasDamage ;
+    sh:qualifiedValueShape [
+    	sh:class cdo:CoarseGrainAggregate ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+urc:AlkaliSilicaReaction
+	a sh:PropertyShape ;
+	sh:path dot:hasDamage ;
+    sh:qualifiedValueShape [
+    	sh:class cdo:AlkaliSilicaReaction ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+urc:DamageAssertion
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 0 ;
+	sh:subject sh:this ;
+	sh:predicate urc:hasUndetectedReinforcementCorrosion ;
+	sh:object [
+	    urc:DamageCreation () ;
+	] ;
+	sh:condition [
+	    sh:and (
+	        [ sh:property urc:Materialcheck ; ]
+	        [ sh:or (
+	        	[ sh:property urc:ConstructionYear ; ]
+	        	[ sh:class brcomp:Girder ; ] ##Spray
+	        	##[ sh:class brcomp:Cap ; ] ##SplashWater
+	        	[ sh:property urc:SeaWater ; ]
+	        	[ sh:property urc:Carbonatation ; ]
+	        	[ sh:property urc:Crack ; ]
+	        	[ sh:property urc:Spalling ; ]
+	        	[ sh:property urc:SpallingExposedReinforcement ; ]
+	        	[ sh:property urc:CoarseGrainAggregate ; ]
+	        	[ sh:property urc:AlkaliSilicaReaction ; ]
+	        ) ]
+        )
+	] ;
+.

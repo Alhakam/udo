@@ -1,0 +1,114 @@
+@prefix usa: <https://wisib.de/ontologie/rules/undetectedSulfateAttack#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dot: <https://w3id.org/dot#> .
+@prefix cdo: <https://wisib.de/ontologie/damage/cdo#> .
+@prefix brcomp: <https://w3id.org/brcomp#> .
+@prefix udo: <https://w3id.org/udo#> .
+@prefix brot: <https://w3id.org/brot#> .
+@prefix bridge: <https://w3id.org/bridge#> .
+
+usa:UndetectedDamage
+	a sh:NodeShape ;
+	sh:targetObjectsOf usa:hasUndetectedSulfateAttack ;
+	sh:rule usa:IndividualCreateType ,
+			usa:UDCreateType ,
+			usa:SprayProbability ,
+			usa:SplashWaterProbability ,
+			usa:SeaWaterProbability ,
+			usa:CreateSulfateAttack ,
+			usa:UDCreateStructuralDamage ;
+.
+usa:Spray
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedSulfateAttack ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:class brcomp:Girder ;
+	    	]
+.
+usa:SplashWater
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedSulfateAttack ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:class brcomp:Cap ;
+	    	]
+.
+usa:SeaWater
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedSulfateAttack ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:path brcomp:seaWaterContact ;
+                sh:hasValue true ;
+	    	]
+.
+usa:UDCreateType
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object udo:UndetectedDamage ;
+.
+usa:IndividualCreateType
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object owl:NamedIndividual ;
+.
+usa:UDCreateStructuralDamage
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object dot:StructuralDamage ;
+.
+usa:SprayProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property usa:Spray ; ]
+.
+usa:SplashWaterProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property usa:SplashWater ; ]
+.
+usa:SeaWaterProbability
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 2;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property usa:SeaWater ; ]
+.
+usa:CreateSulfateAttack
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 3 ;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object cdo:SulfateAttack ;
+	sh:condition [
+		sh:or (	        	
+	        	[ sh:property usa:Spray ; ]
+	        	[ sh:property usa:SplashWater ; ]
+	        	[ sh:property usa:SeaWater ; ]
+	        )
+	]
+.

@@ -1,0 +1,233 @@
+@prefix test: <https://testbridge.de#> .
+@prefix brot: <https://w3id.org/brot#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bridge: <https://w3id.org/bridge#> .
+@prefix bmat: <https://w3id.org/bmat#> .
+@prefix brcomp: <https://w3id.org/brcomp#> .
+@prefix dot: <http://www.w3id.org/dot#> .
+@prefix cdo: <https://wisib.de/ontologie/damage/cdo#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix brstr: <https://w3id.org/brstr#> .
+
+
+<https://testbridge.de> rdf:type owl:Ontology ;
+			 owl:versionIRI <https://testbridge.de/0.1> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+test:bridge rdf:type owl:NamedIndividual ,
+					 brot:bridge ;
+			bridge:constructionYear 1970 ;
+			brot:containsElement test:component1 ;
+			brot:containsElement test:component11 ;
+			brot:containsElement test:component13 ;
+			brot:containsElement test:tendon1 ;
+.
+test:boxBridge rdf:type owl:NamedIndividual ,
+					 bridge:BoxGirderBridge ;
+			brot:containsElement test:component12 ;
+.
+test:concreteMaterial rdf:type owl:NamedIndividual ,
+					  		   bmat:ReinforcedConcrete ;
+.
+test:carbonatationDamage rdf:type owl:NamedIndividual ,
+					  		   	  cdo:Carbonatation ;
+.
+test:crackDamage rdf:type owl:NamedIndividual ,
+					   	  cdo:Crack ;
+.
+test:spallingDamage rdf:type owl:NamedIndividual ,
+					  	     cdo:Spalling ;
+.
+test:spallingERDamage rdf:type owl:NamedIndividual ,
+					  	     cdo:SpallingExposedReinforcement ;
+.
+test:coarseDamage rdf:type owl:NamedIndividual ,
+					  	     cdo:CoarseGrainAggregate ;
+.
+test:asrDamage rdf:type owl:NamedIndividual ,
+					  	     cdo:AlkaliSilicaReaction ;
+.
+test:cavityDamage rdf:type owl:NamedIndividual ,
+					  	     cdo:Cavity ;
+.
+test:tendonCorrosionDamage rdf:type owl:NamedIndividual ,
+					  	     cdo:TendonCorrosion ;
+.
+test:reinforcementCorrosionDamage rdf:type owl:NamedIndividual ,
+					  	     cdo:ReinforcementCorrosion ;
+.
+test:coupleJoint rdf:type owl:NamedIndividual ,
+						  brcomp:BridgeCouplingJoint ;
+.
+test:component1 rdf:type owl:NamedIndividual ,
+						 brot:BridgeElement ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+.
+# ReinforcementCorrosion & SulfateAttack & StressCorrosion
+test:component2 rdf:type owl:NamedIndividual ,
+						 brot:BridgeElement ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				brcomp:seaWaterContact true ;
+				brot:aggregates test:tendon6 ;
+.
+# ReinforcementCorrosion & SulfateAttack & StressCorrosion
+test:component3 rdf:type owl:NamedIndividual ,
+						 brot:BridgeElement ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				dot:hasDamage test:carbonatationDamage ;
+				brot:aggregates test:tendon9 ;
+.
+# ReinforcementCorrosion & SulfateAttack & StressCorrosion
+test:component4 rdf:type owl:NamedIndividual ,
+						 brot:BridgeElement ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				dot:hasDamage test:crackDamage ;
+				brot:aggregates test:tendon10 ;
+.
+# ReinforcementCorrosion & SulfateAttack & StressCorrosion
+test:component5 rdf:type owl:NamedIndividual ,
+						 brot:BridgeElement ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				dot:hasDamage test:spallingDamage ;
+				brot:aggregates test:tendon11 ;
+.
+test:component6 rdf:type owl:NamedIndividual ,
+						 brot:BridgeElement ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				dot:hasDamage test:spallingERDamage ;
+.
+# ReinforcementCorrosion & Stress Corrosion
+test:component7 rdf:type owl:NamedIndividual ,
+						 brot:BridgeElement ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				dot:hasDamage test:coarseDamage ;
+				brot:aggregates test:tendon4 ;
+.
+# ReinforcementCorrosion & Stress Corrosion
+test:component8 rdf:type owl:NamedIndividual ,
+						 brot:BridgeElement ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				dot:hasDamage test:asrDamage ;
+				brot:aggregates test:tendon2 ;
+.
+# ReinforcementCorrosion & SulfateAttack & StressCorrosion
+test:component9 rdf:type owl:NamedIndividual ,
+						 brcomp:BridgeGirder ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				brot:aggregates test:tendon7 ;
+.
+# ReinforcementCorrosion & SulfateAttack & StressCorrosion
+test:component10 rdf:type owl:NamedIndividual ,
+						 brcomp:BridgeCap ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				brot:aggregates test:tendon8 ;
+.
+test:component11 rdf:type owl:NamedIndividual ,
+						  brot:BridgeElement ;
+				 bmat:hasBuildingMaterial test:concreteMaterial ;
+				 brot:aggregates test:coupleJoint ;
+.				 
+test:component12 rdf:type owl:NamedIndividual ,
+						  brot:BridgeElement ;
+				 bmat:hasBuildingMaterial test:concreteMaterial ;
+				 brot:aggregates test:coupleJoint ;
+.
+test:tendon1 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:component13 rdf:type owl:NamedIndividual ,
+						  brot:BridgeElement ;
+				 bmat:hasBuildingMaterial test:concreteMaterial ;
+				 brot:aggregates test:tendon1 ;
+.
+test:tendon2 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:tendon3 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:component14 rdf:type owl:NamedIndividual ,
+						 brot:BridgeElement ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				dot:hasDamage test:cavityDamage ;
+				brot:aggregates test:tendon3 ;
+.
+test:tendon4 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:tendon5 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+			 dot:hasDamage test:crackDamage ;
+.
+test:tendon6 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:tendon7 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:tendon8 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:tendon9 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:tendon10 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:tendon11 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:tendon12 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+			  dot:hasDamage test:tendonCorrosionDamage ;
+.
+test:component15 rdf:type owl:NamedIndividual ,
+						 brot:BridgeElement ;
+				bmat:hasBuildingMaterial test:concreteMaterial ;
+				dot:hasDamage test:reinforcementCorrosionDamage ;
+				brot:aggregates test:tendon13 ;
+.
+test:tendon13 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+.
+test:FeltenManufacturer rdf:type owl:NamedIndividual ,
+								 dbo:Organisation ;
+.
+test:RheinhausenManufacturer rdf:type owl:NamedIndividual ,
+								 dbo:Organisation ;
+.
+test:HenningsdorfManufacturer rdf:type owl:NamedIndividual ,
+								 dbo:Organisation ;
+.
+test:tendon14 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+			  brcomp:installationYear 1950 ;
+			  dbo:manufacturer test:FeltenManufacturer ;
+			  brstr:yieldStrength 1450 ;
+			  brstr:breakingLimit 1600 ;
+.
+test:tendon15 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+			  brcomp:installationYear 1950 ;
+			  dbo:manufacturer test:RheinhauseManufacturer ;
+			  brstr:yieldStrength 1450 ;
+			  brstr:breakingLimit 1600 ;
+.
+test:tendon16 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+			  brcomp:installationYear 1970 ;
+			  dbo:manufacturer test:RheinhausenManufacturer ;
+			  brstr:yieldStrength 1450 ;
+			  brstr:breakingLimit 1600 ;
+.
+test:tendon17 rdf:type owl:NamedIndividual ,
+					  brcomp:BridgeTendon ;
+			  brcomp:installationYear 1990 ;
+			  dbo:manufacturer test:HenningsdorfManufacturer ;
+			  brstr:yieldStrength 1450 ;
+			  brstr:breakingLimit 1600 ;
+.

@@ -1,0 +1,371 @@
+@prefix uc: <https://wisib.de/ontologie/rules/undetectedCrack#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix brcomp: <https://w3id.org/brcomp#> .
+@prefix bmat: <https://w3id.org/bmat#> .
+@prefix udo: <https://w3id.org/udo#> .
+@prefix brot: <https://w3id.org/brot#> .
+@prefix bridge: <https://w3id.org/bridge#> .
+@prefix cdo: <https://wisib.de/ontologie/damage/cdo#> .
+@prefix dot: <https://w3id.org/dot#> .
+
+uc:UndetectedDamage
+	a sh:NodeShape ;
+	sh:targetObjectsOf uc:hasUndetectedCrack ;
+	sh:rule uc:IndividualCreateType ,
+			uc:UDCreateType ,
+			uc:CreateProbability2011-2003 ,
+			uc:CreateProbability2003-1982 ,
+			uc:CreateProbability1982-1967 ,
+			uc:CreateProbability1967-1952 ,
+			uc:CreateProbability1952-1941 ,
+			uc:CreateProbability1941-1924 ,
+			uc:CreateProbability1924-older ,
+			uc:CreateProbability1966-older ,
+			uc:CreateProbability1979-1977 ,
+			uc:CreateProbability1977-older ,
+			uc:CreateProbability1980-older ,
+			uc:CreateProbability1959-older ,
+			uc:CreateProbabilityBoxGirder ,
+			uc:UDCreateCrack ,
+			uc:UDCreateStructuralDamage ;
+.
+uc:UDCreateType
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object udo:UndetectedDamage ;
+.
+uc:IndividualCreateType
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object owl:NamedIndividual ;
+.
+uc:UDCreateCrack
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object cdo:Crack ;
+.
+uc:UDCreateStructuralDamage
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object dot:StructuralDamage ;
+.
+uc:ConstructionYear2011-2003
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 2003 ;
+                	sh:maxInclusive 2011 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear2003-1982
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1982 ;
+                	sh:maxInclusive 2003 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear1982-1967
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1967 ;
+                	sh:maxInclusive 1982 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear1967-1952
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1952 ;
+                	sh:maxInclusive 1967 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear1952-1941
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1941 ;
+                	sh:maxInclusive 1952 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear1941-1924
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1924 ;
+                	sh:maxInclusive 1941 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear1924-older
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1000 ;
+                	sh:maxInclusive 1924 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear1966-older
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1000 ;
+                	sh:maxInclusive 1966 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear1979-1977
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1977 ;
+                	sh:maxInclusive 1979 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear1977-older
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1000 ;
+                	sh:maxInclusive 1977 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear1980-older
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1000 ;
+                	sh:maxInclusive 1980 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:ConstructionYear1959-older
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedCrack ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1000 ;
+                	sh:maxInclusive 1959 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+uc:BoxGirder
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath brot:containsComponent ] ;
+    sh:qualifiedValueShape [
+    	sh:class bridge:BoxGirderBridge ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+uc:CreateProbability2011-2003
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property uc:ConstructionYear2011-2003 ; ]
+.
+uc:CreateProbability2003-1982
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property uc:ConstructionYear2003-1982 ; ]
+.
+uc:CreateProbability1982-1967
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property uc:ConstructionYear1982-1967 ; ]
+.
+uc:CreateProbability1967-1952
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property uc:ConstructionYear1967-1952 ; ]
+.
+uc:CreateProbability1952-1941
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property uc:ConstructionYear1952-1941 ; ]
+.
+uc:CreateProbability1941-1924
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property uc:ConstructionYear1941-1924 ; ]
+.
+uc:CreateProbability1924-older
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property uc:ConstructionYear1924-older ; ]
+.
+uc:CreateProbability1966-older
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property uc:ConstructionYear1966-older ; ]
+.
+uc:CreateProbability1979-1977
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property uc:ConstructionYear1979-1977 ; ]
+.
+uc:CreateProbability1977-older
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property uc:ConstructionYear1977-older ; ]
+.
+uc:CreateProbability1980-older
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property uc:ConstructionYear1980-older ; ]
+.
+uc:CreateProbability1959-older
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property uc:ConstructionYear1959-older ; ]
+.
+uc:CreateProbabilityBoxGirder
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 5.0 ;
+	sh:condition [ sh:property uc:BoxGirder ; ]
+.

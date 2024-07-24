@@ -1,0 +1,247 @@
+@prefix usc: <https://wisib.de/ontologie/rules/undetectedStressCorrosion#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dot: <http://w3id.org/dot#> .
+@prefix cdo: <https://wisib.de/ontologie/damage/cdo#> .
+@prefix brcomp: <https://w3id.org/brcomp#> .
+@prefix bmat: <https://w3id.org/bmat#> .
+@prefix udo: <https://w3id.org/udo#> .
+@prefix brot: <https://w3id.org/brot#> .
+@prefix bridge: <https://w3id.org/bridge#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix brstr: <https://w3id.org/brstr#> .
+
+brcomp:Tendon
+	a rdfs:Class, sh:NodeShape ;
+	sh:rule usc:DamageAssertion ;
+.
+usc:DamageCreation
+	a sh:SPARQLFunction ;
+	rdfs:comment "Creates a new individual of udo:UndetectedDamage" ;
+	sh:select """
+		SELECT  IRI(CONCAT(STR(NOW()), STR(CEIL((RAND() * 40000)))))
+		WHERE {
+		}
+	"""
+.
+usc:ConstructionYear
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath brot:containsComponent ] ;
+    sh:qualifiedValueShape [
+    	sh:path bridge:constructionYear ;
+        sh:minCount 1 ;
+        sh:minInclusive 1000 ;
+        sh:maxInclusive 2011 ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+usc:AlkaliSilicaReaction
+	a sh:PropertyShape ;
+    sh:path [ sh:inversePath brot:aggregates ] ;
+    sh:property [
+        sh:path dot:hasDamage ;
+        sh:qualifiedValueShape [
+            sh:class cdo:AlkaliSilicaReaction ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+    ]
+.
+usc:Cavity
+    a sh:PropertyShape ;
+    sh:path [ sh:inversePath brot:aggregates ] ;
+    sh:property [
+        sh:path dot:hasDamage ;
+        sh:qualifiedValueShape [
+            sh:class cdo:Cavity ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+    ]
+.
+usc:CoarseGrainAggregate
+    a sh:PropertyShape ;
+    sh:path [ sh:inversePath brot:aggregates ] ;
+    sh:property [
+        sh:path dot:hasDamage ;
+        sh:qualifiedValueShape [
+            sh:class cdo:CoarseGrainAggregate ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+    ]
+.
+usc:TendonDamage
+	a sh:PropertyShape ;
+	sh:path dot:hasDamage ;
+	sh:minCount 1 ;
+.
+usc:SeaWater
+	a sh:PropertyShape ;
+    sh:path [ sh:inversePath brot:aggregates ] ;
+    sh:property [
+	   sh:path brcomp:seaWaterContact ;
+        sh:hasValue true ;
+    ]
+.
+usc:Spray
+    a sh:PropertyShape ;
+    sh:path [ sh:inversePath brot:aggregates ] ;
+    sh:class brcomp:Girder ;
+.
+usc:SplashWater
+    a sh:PropertyShape ;
+    sh:path [ sh:inversePath brot:aggregates ] ;
+    sh:class brcomp:Cap ;
+.
+usc:Carbonatation
+    a sh:PropertyShape ;
+    sh:path [ sh:inversePath brot:aggregates ] ;
+    sh:property [
+        sh:path dot:hasDamage ;
+        sh:qualifiedValueShape [
+            sh:class cdo:Carbonatation ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+    ]
+.
+usc:Crack
+    a sh:PropertyShape ;
+    sh:path [ sh:inversePath brot:aggregates ] ;
+    sh:property [
+        sh:path dot:hasDamage ;
+        sh:qualifiedValueShape [
+            sh:class cdo:Crack ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+    ]
+.
+usc:Spalling
+    a sh:PropertyShape ;
+    sh:path [ sh:inversePath brot:aggregates ] ;
+    sh:property [
+        sh:path dot:hasDamage ;
+        sh:qualifiedValueShape [
+            sh:class cdo:Spalling ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+    ]
+.
+usc:TendonCorrosion
+	a sh:PropertyShape ;
+	sh:path dot:hasDamage ;
+	sh:qualifiedValueShape [
+    	sh:class cdo:TendonCorrosion ;
+    ] ;
+    sh:qualifiedMinCount 1 ;
+.
+usc:ReinforcementCorrosion
+    a sh:PropertyShape ;
+    sh:path [ sh:inversePath brot:aggregates ] ;
+    sh:property [
+        sh:path dot:hasDamage ;
+        sh:qualifiedValueShape [
+            sh:class cdo:ReinforcementCorrosion ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+    ]
+.
+usc:SpecificTendonYear1965
+	a sh:PropertyShape ;
+	sh:path brcomp:installationYear ;
+    sh:minCount 1 ;
+    sh:minInclusive 1000 ;
+    sh:maxInclusive 1965 ;
+.
+usc:SpecificTendonManufacturerFelten
+    a sh:PropertyShape ;
+    sh:path dbo:manufacturer ;
+    sh:pattern "Felten" ;
+.
+usc:SpecificTendonYieldStrength
+    a sh:PropertyShape ;
+    sh:path brstr:yieldStrength ;
+    sh:minCount 1 ;
+    sh:minInclusive 1449 ;
+    sh:maxInclusive 1451 ;
+.
+usc:SpecificTendonBreakingLimit
+    a sh:PropertyShape ;
+    sh:path brstr:breakingLimit ;
+    sh:minCount 1 ;
+    sh:minInclusive 1599 ;
+    sh:maxInclusive 1601 ;
+.
+usc:SpecificTendonManufacturerRheinhausen
+    a sh:PropertyShape ;
+    sh:path dbo:manufacturer ;
+    sh:pattern "Rheinhausen" ;
+.
+usc:SpecificTendonYear1993
+    a sh:PropertyShape ;
+    sh:path brcomp:installationYear ;
+    sh:minCount 1 ;
+    sh:minInclusive 1000 ;
+    sh:maxInclusive 1993 ;
+.
+usc:SpecificTendonManufacturerHenningsdorf
+    a sh:PropertyShape ;
+    sh:path dbo:manufacturer ;
+    sh:pattern "Henningsdorf" ;
+.
+usc:SpecificTendonYear1978
+    a sh:PropertyShape ;
+    sh:path brcomp:installationYear ;
+    sh:minCount 1 ;
+    sh:minInclusive 1000 ;
+    sh:maxInclusive 1978 ;
+.
+usc:DamageAssertion
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 0 ;
+	sh:subject sh:this ;
+	sh:predicate usc:hasUndetectedStressCorrosion ;
+	sh:object [
+	    usc:DamageCreation () ;
+	] ;
+	sh:condition [
+        sh:or (
+	       	[ sh:property usc:ConstructionYear ; ]
+	       	[ sh:property usc:AlkaliSilicaReaction ; ]
+	       	[ sh:property usc:Cavity ; ]
+	       	[ sh:property usc:CoarseGrainAggregate ; ]
+	       	[ sh:property usc:TendonDamage ; ]
+	       	[ sh:property usc:Spray ; ]
+	      	##[ sh:property usc:SplashWater ; ]
+	       	[ sh:property usc:SeaWater ; ]
+	       	[ sh:property usc:Carbonatation ; ]
+	       	[ sh:property usc:Crack ; ]
+	       	[ sh:property usc:Spalling ; ]
+	       	[ sh:property usc:TendonCorrosion ; ]
+	       	[ sh:property usc:ReinforcementCorrosion ; ]
+	       	[ sh:and (
+                [sh:property usc:SpecificTendonYear1965 ; ]
+                [sh:property usc:SpecificTendonManufacturerFelten ; ]
+                [sh:property usc:SpecificTendonYieldStrength ; ]
+                [sh:property usc:SpecificTendonBreakingLimit ; ]
+                ) ; ]
+            [ sh:and (
+                [sh:property usc:SpecificTendonYear1965 ; ]
+                [sh:property usc:SpecificTendonManufacturerRheinhausen ; ]
+                [sh:property usc:SpecificTendonYieldStrength ; ]
+                [sh:property usc:SpecificTendonBreakingLimit ; ]
+                ) ; ]
+            [ sh:and (
+                [sh:property usc:SpecificTendonYear1978 ; ]
+                [sh:property usc:SpecificTendonManufacturerRheinhausen ; ]
+                [sh:property usc:SpecificTendonYieldStrength ; ]
+                [sh:property usc:SpecificTendonBreakingLimit ; ]
+                ) ; ]
+            [ sh:and (
+                [sh:property usc:SpecificTendonYear1993 ; ]
+                [sh:property usc:SpecificTendonManufacturerHenningsdorf ; ]
+                [sh:property usc:SpecificTendonYieldStrength ; ]
+                [sh:property usc:SpecificTendonBreakingLimit ; ]
+                ) ; ]
+        )
+	] ;
+.

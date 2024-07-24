@@ -1,0 +1,969 @@
+@prefix usc: <https://wisib.de/ontologie/rules/undetectedCrack#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix brcomp: <https://w3id.org/brcomp#> .
+@prefix bmat: <https://w3id.org/bmat#> .
+@prefix udo: <https://w3id.org/udo#> .
+@prefix brot: <https://w3id.org/brot#> .
+@prefix bridge: <https://w3id.org/bridge#> .
+@prefix cdo: <https://wisib.de/ontologie/damage/cdo#> .
+@prefix dot: <https://w3id.org/dot#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix brstr: <https://w3id.org/brstr#> .
+
+usc:UndetectedDamage
+	a sh:NodeShape ;
+	sh:targetObjectsOf usc:hasUndetectedStressCorrosion ;
+	sh:rule usc:IndividualCreateType ,
+			usc:UDCreateType ,
+            usc:UDCreateStressCorrosionCrack ,
+            usc:CreateProbability1979-older ,
+            usc:CreateProbabilitySpray ,
+            usc:CreateProbabilitySplashWater ,
+            usc:CreateProbabilitySeaWater ,
+            usc:CreateProbability1920-older ,
+            usc:CreateProbabilityTendonDamage ,
+            usc:CreateProbabilityCarbonatation ,
+            usc:CoarseGrainAggregate ,
+            usc:CreateProbabilityCrack ,
+            usc:CreateProbabilitySpalling ,
+            usc:CreateProbabilitySpallingExposedReinforcement ,
+            usc:CreateProbability2011-2003 ,
+            usc:CreateProbability2003-1982 ,
+            usc:CreateProbability1982-1967 ,
+            usc:CreateProbability1967-1952 ,
+            usc:CreateProbability1952-1941 ,
+            usc:CreateProbability2009-2001 ,
+            usc:CreateProbability2001-1995 ,
+            usc:CreateProbability1995-1990 ,
+            usc:CreateProbability1990-1988 ,
+            usc:CreateProbability1988-1972 ,
+            usc:CreateProbability1972-older ,
+            usc:CreateProbability2001-1985 ,
+            usc:CreateProbability1985-1979 ,
+            usc:CreateProbability1979-1953 ,
+            usc:CreateProbability1953-older ,
+            usc:CreateProbability1980-older ,
+            usc:CreateProbabilityCavity ,
+            usc:CreateProbabilityAlkaliSilicaReaction ,
+            usc:CreateProbabilityTendonCorrosion ,
+            usc:CreateProbabilityReinforcementCorrosion ,
+            usc:CreateProbabilityFelten ,
+            usc:CreateProbabilityRheinhausen1965 ,
+            usc:CreateProbabilityRheinhausen1978 ,
+            usc:CreateProbabilityHenningsdorf ,
+            usc:UDCreateStructuralDamage ;
+.
+usc:UDCreateType
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object udo:UndetectedDamage ;
+.
+usc:IndividualCreateType
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object owl:NamedIndividual ;
+.
+usc:UDCreateStressCorrosionCrack
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1;
+	sh:subject sh:this ;
+	sh:predicate rdf:type ;
+	sh:object cdo:StressCorrosionCrack ;
+.
+usc:UDCreateStructuralDamage
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1;
+    sh:subject sh:this ;
+    sh:predicate rdf:type ;
+    sh:object dot:StructuralDamage ;
+.
+usc:ConstructionYear1979-older
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1000 ;
+                	sh:maxInclusive 1979 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:Spray
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+			sh:property [
+				sh:path [ sh:inversePath brot:aggregates ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:class brcomp:Girder ;
+	    	]
+	    ]
+.
+usc:SplashWater
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+			sh:property [
+				sh:path [ sh:inversePath brot:aggregates ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:class brcomp:Cap ;
+	    	]
+	    ]
+.
+usc:SeaWater
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+			sh:property [
+				sh:path [ sh:inversePath brot:aggregates ] ;
+				sh:qualifiedMinCount 1 ;
+				sh:qualifiedValueShape [
+	    		sh:path brcomp:seaWaterContact ;
+                sh:hasValue true ;
+	    		]
+			]	
+.
+usc:TendonDamage
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+			sh:class brcomp:Tendon ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:not [
+                		a sh:PropertyShape ;
+                		sh:class udo:UndetectedDamage ;
+                		sh:minCount 1 ;
+                	] ;
+				] 
+			]
+.
+usc:Carbonatation
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:property [
+		sh:path [ sh:inversePath brot:aggregates ] ;
+		sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:Carbonatation ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+	    		] 
+			]
+	]
+.
+usc:ConstructionYear1920-older
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1000 ;
+                	sh:maxInclusive 1920 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:CoarseGrainAggregate
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:property [
+		sh:path [ sh:inversePath brot:aggregates ] ;
+		sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:CoarseGrainAggregate ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+	    		] 
+			]
+	]
+.
+usc:Crack
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:property [
+		sh:path [ sh:inversePath brot:aggregates ] ;
+		sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:Crack ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+	    		] 
+			]
+	]
+.
+usc:Spalling
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:property [
+		sh:path [ sh:inversePath brot:aggregates ] ;
+		sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:Spalling ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+	    		] 
+			]
+	]
+.
+usc:SpallingExposedReinforcement
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:property [
+		sh:path [ sh:inversePath brot:aggregates ] ;
+		sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:SpallingExposedReinforcement ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+	    		] 
+			]
+	]
+.
+usc:ConstructionYear2011-2003
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 2003 ;
+                	sh:maxInclusive 2011 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear2003-1982
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1982 ;
+                	sh:maxInclusive 2003 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1982-1967
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1967 ;
+                	sh:maxInclusive 1982 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1967-1952
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1952 ;
+                	sh:maxInclusive 1967 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1952-1941
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minInclusive 1941 ;
+                	sh:maxInclusive 1952 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear2009-2001
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 2001 ;
+                	sh:maxInclusive 2009 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear2001-1995
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1995 ;
+                	sh:maxInclusive 2001 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1995-1990
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1990 ;
+                	sh:maxInclusive 1995 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1990-1988
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1988 ;
+                	sh:maxInclusive 1990 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1988-1972
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1972 ;
+                	sh:maxInclusive 1988 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1972-older
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1000 ;
+                	sh:maxInclusive 1972 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear2001-1985
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1985 ;
+                	sh:maxInclusive 2001 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1985-1979
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1979 ;
+                	sh:maxInclusive 1985 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1979-1953
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1953 ;
+                	sh:maxInclusive 1979 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1953-older
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1000 ;
+                	sh:maxInclusive 1953 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:ConstructionYear1980-older
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+            sh:qualifiedValueShape [
+            	sh:path [ sh:inversePath brot:containsComponent ] ;
+                sh:qualifiedValueShape [
+                	sh:path bridge:constructionYear ;
+                	sh:minCount 1 ;
+                	sh:minExlusive 1000 ;
+                	sh:maxInclusive 1980 ;
+                ] ;
+                sh:qualifiedMinCount 1 ;
+            ] ;
+            sh:qualifiedMinCount 1 ;
+.
+usc:Cavity
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:property [
+		sh:path [ sh:inversePath brot:aggregates ] ;
+		sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:Cavity ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+	    		] 
+			]
+	]
+.
+usc:AlkaliSilicaReaction
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:property [
+		sh:path [ sh:inversePath brot:aggregates ] ;
+		sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:AlkaliSilicaReaction ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+	    		] 
+			]
+	]
+.
+usc:TendonCorrosion
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+			sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:TendonCorrosion ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+	    		] 
+			]
+.
+usc:ReinforcementCorrosion
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:property [
+		sh:path [ sh:inversePath brot:aggregates ] ;
+		sh:qualifiedMinCount 1 ;
+			sh:qualifiedValueShape [
+	    		sh:property [
+					sh:path dot:hasDamage ;
+                	sh:qualifiedValueShape [
+                		sh:class cdo:ReinforcementCorrosion ;
+                	] ;
+                	sh:qualifiedMinCount 1 ;
+	    		] 
+			]
+	]
+.
+usc:SpecificTendonYear1965
+	a sh:PropertyShape ;
+	sh:path brcomp:installationYear ;
+    sh:minCount 1 ;
+    sh:minInclusive 1000 ;
+    sh:maxInclusive 1965 ;
+.
+usc:SpecificTendonManufacturerFelten
+    a sh:PropertyShape ;
+    sh:path dbo:manufacturer ;
+    sh:pattern "Felten" ;
+.
+usc:SpecificTendonYieldStrength
+    a sh:PropertyShape ;
+    sh:path brstr:yieldStrength ;
+    sh:minCount 1 ;
+    sh:minInclusive 1449 ;
+    sh:maxInclusive 1451 ;
+.
+usc:SpecificTendonBreakingLimit
+    a sh:PropertyShape ;
+    sh:path brstr:breakingLimit ;
+    sh:minCount 1 ;
+    sh:minInclusive 1599 ;
+    sh:maxInclusive 1601 ;
+.
+usc:SpecificTendonManufacturerRheinhausen
+    a sh:PropertyShape ;
+    sh:path dbo:manufacturer ;
+    sh:pattern "Rheinhausen" ;
+.
+usc:SpecificTendonYear1993
+    a sh:PropertyShape ;
+    sh:path brcomp:installationYear ;
+    sh:minCount 1 ;
+    sh:minInclusive 1000 ;
+    sh:maxInclusive 1993 ;
+.
+usc:SpecificTendonManufacturerHenningsdorf
+    a sh:PropertyShape ;
+    sh:path dbo:manufacturer ;
+    sh:pattern "Henningsdorf" ;
+.
+usc:SpecificTendonYear1978
+    a sh:PropertyShape ;
+    sh:path brcomp:installationYear ;
+    sh:minCount 1 ;
+    sh:minInclusive 1000 ;
+    sh:maxInclusive 1978 ;
+.
+usc:SpecificTendonFelten
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:node [
+		sh:property usc:SpecificTendonYear1965 ;
+		sh:property usc:SpecificTendonManufacturerFelten ;
+		sh:property usc:SpecificTendonYieldStrength ;
+		sh:property usc:SpecificTendonBreakingLimit ;
+	] ;
+	sh:minCount 1 ;
+.
+usc:SpecificTendonRheinhausen1965
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:node [
+		sh:property usc:SpecificTendonYear1965 ;
+		sh:property usc:SpecificTendonManufacturerRheinhausen ;
+		sh:property usc:SpecificTendonYieldStrength ;
+		sh:property usc:SpecificTendonBreakingLimit ;
+	] ;
+	sh:minCount 1 ;
+.
+usc:SpecificTendonRheinhausen1978
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:node [
+		sh:property usc:SpecificTendonYear1978 ;
+		sh:property usc:SpecificTendonManufacturerRheinhausen ;
+		sh:property usc:SpecificTendonYieldStrength ;
+		sh:property usc:SpecificTendonBreakingLimit ;
+	] ;
+	sh:minCount 1 ;
+.
+usc:SpecificTendonHenningsdorf
+	a sh:PropertyShape ;
+	sh:path [ sh:inversePath udo:hasUndetectedStressCorrosion ] ;
+	sh:node [
+		sh:property usc:SpecificTendonYear1993 ;
+		sh:property usc:SpecificTendonManufacturerHenningsdorf ;
+		sh:property usc:SpecificTendonYieldStrength ;
+		sh:property usc:SpecificTendonBreakingLimit ;
+	] ;
+	sh:minCount 1 ;
+.
+usc:CreateProbability1979-older
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 2.0 ;
+	sh:condition [ sh:property usc:ConstructionYear1979-older ; ]
+.
+usc:CreateProbabilitySpray
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 1 ;
+	sh:subject sh:this ;
+	sh:predicate udo:damageProbability ;
+	sh:object 0.1 ;
+	sh:condition [ sh:property usc:Spray ; ]
+.
+usc:CreateProbabilitySplashWater
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 2.0 ;
+    sh:condition [ sh:property usc:SplashWater ; ]
+.
+usc:CreateProbabilitySeaWater
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 2.0 ;
+    sh:condition [ sh:property usc:SeaWater ; ]
+.
+usc:CreateProbability1920-older
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear1920-older ; ]
+.
+usc:CreateProbabilityTendonDamage
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 5.0 ;
+    sh:condition [ sh:property usc:TendonDamage ; ]
+.
+usc:CreateProbabilityCarbonatation
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 2.0 ;
+    sh:condition [ sh:property usc:Carbonatation ; ]
+.
+usc:CoarseGrainAggregate
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:CoarseGrainAggregate ; ]
+.
+usc:CreateProbabilityCrack
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 2.0 ;
+    sh:condition [ sh:property usc:Crack ; ]
+.
+usc:CreateProbabilitySpalling
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 2.0 ;
+    sh:condition [ sh:property usc:Spalling ; ]
+.
+usc:CreateProbabilitySpallingExposedReinforcement
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 4.0 ;
+    sh:condition [ sh:property usc:SpallingExposedReinforcement ; ]
+.
+usc:CreateProbability2011-2003
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear2011-2003 ; ]
+.
+usc:CreateProbability2003-1982
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear2003-1982 ; ]
+.
+usc:CreateProbability1982-1967
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear1982-1967 ; ]
+.
+usc:CreateProbability1967-1952
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear1967-1952 ; ]
+.
+usc:CreateProbability1952-1941
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear1952-1941 ; ]
+.
+usc:CreateProbability2009-2001
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear2009-2001 ; ]
+.
+usc:CreateProbability2001-1995
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear2001-1995 ; ]
+.
+usc:CreateProbability1995-1990
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear1995-1990 ; ]
+.
+usc:CreateProbability1990-1988
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear1990-1988 ; ]
+.
+usc:CreateProbability1988-1972
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear1988-1972 ; ]
+.
+usc:CreateProbability1972-older
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 2.0 ;
+    sh:condition [ sh:property usc:ConstructionYear1972-older ; ]
+.
+usc:CreateProbability2001-1985
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear2001-1985 ; ]
+.
+usc:CreateProbability1985-1979
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear1985-1979 ; ]
+.
+usc:CreateProbability1979-1953
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:ConstructionYear1979-1953 ; ]
+.
+usc:CreateProbability1953-older
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 2.0 ;
+    sh:condition [ sh:property usc:ConstructionYear1953-older ; ]
+.
+usc:CreateProbability1980-older
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 2.0 ;
+    sh:condition [ sh:property usc:ConstructionYear1980-older ; ]
+.
+usc:CreateProbabilityCavity
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 2.0 ;
+    sh:condition [ sh:property usc:Cavity ; ]
+.
+usc:CreateProbabilityAlkaliSilicaReaction
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 0.1 ;
+    sh:condition [ sh:property usc:AlkaliSilicaReaction ; ]
+.
+usc:CreateProbabilityTendonCorrosion
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 20.0 ;
+    sh:condition [ sh:property usc:TendonCorrosion ; ]
+.
+usc:CreateProbabilityReinforcementCorrosion
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 10.0 ;
+    sh:condition [ sh:property usc:ReinforcementCorrosion ; ]
+.
+usc:CreateProbabilityFelten
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 40.0 ;
+    sh:condition [ sh:property usc:SpecificTendonFelten ; ]
+.
+usc:CreateProbabilityRheinhausen1965
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 40.0 ;
+    sh:condition [ sh:property usc:SpecificTendonRheinhausen1965 ; ]
+.
+usc:CreateProbabilityRheinhausen1978
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 20.0 ;
+    sh:condition [ sh:property usc:SpecificTendonRheinhausen1978 ; ]
+.
+usc:CreateProbabilityHenningsdorf
+    a sh:TripleRule ;
+    sh:deactivated false ;
+    sh:order 1 ;
+    sh:subject sh:this ;
+    sh:predicate udo:damageProbability ;
+    sh:object 40.0 ;
+    sh:condition [ sh:property usc:SpecificTendonHenningsdorf ; ]
+.

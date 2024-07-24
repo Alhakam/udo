@@ -1,0 +1,59 @@
+@prefix usa: <https://wisib.de/ontologie/rules/undetectedSulfateAttack#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dot: <http://w3id.org/dot#> .
+@prefix brcomp: <https://w3id.org/brcomp#> .
+@prefix bmat: <https://w3id.org/bmat#> .
+@prefix udo: <https://w3id.org/udo#> .
+@prefix brot: <https://w3id.org/brot#> .
+@prefix bridge: <https://w3id.org/bridge#> .
+@prefix cdo: <https://wisib.de/ontologie/damage/cdo#> .
+
+owl:NamedIndividual
+	a rdfs:Class, sh:NodeShape ;
+	sh:rule usa:DamageAssertion ;
+.
+usa:MaterialCheck
+	a sh:PropertyShape ;
+	sh:path bmat:hasBuildingMaterial ;
+	sh:qualifiedMinCount 1 ;
+		sh:qualifiedValueShape [
+	    	sh:class bmat:ReinforcedConcrete ;
+	    ] ;
+.
+usa:DamageCreation
+	a sh:SPARQLFunction ;
+	rdfs:comment "Creates a new individual of udo:UndetectedDamage" ;
+	sh:select """
+		SELECT  IRI(CONCAT(STR(NOW()), STR(CEIL((RAND() * 20000)))))
+		WHERE {
+		}
+	"""
+.
+usa:SeaWater
+	a sh:PropertyShape ;
+	sh:path brcomp:seaWaterContact ;
+    sh:hasValue true ;
+.
+usa:DamageAssertion
+	a sh:TripleRule ;
+	sh:deactivated false ;
+	sh:order 0 ;
+	sh:subject sh:this ;
+	sh:predicate usa:hasUndetectedSulfateAttack ;
+	sh:object [
+	    usa:DamageCreation () ;
+	] ;
+	sh:condition [
+	    sh:and (
+	        [ sh:property usa:Materialcheck ; ]
+	        [ sh:or (
+	        	[ sh:class brcomp:Girder ; ] ##Spray
+	        	##[ sh:class brcomp:Cap ; ] ##SplashWater
+	        	[ sh:property usa:SeaWater ; ]
+	        ) ]
+        )
+	] ;
+.
